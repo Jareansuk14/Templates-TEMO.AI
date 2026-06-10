@@ -1,0 +1,39 @@
+---
+import { BANNER, ACTION_BUTTONS, hasBannerImage } from "@/lib/images";
+
+interface Props {
+  externalLink: string;
+}
+const { externalLink } = Astro.props;
+
+const hasBanner = hasBannerImage();
+const login = ACTION_BUTTONS.login;
+const register = ACTION_BUTTONS.register;
+---
+
+<section class="banner-hero-section" aria-label="Banner หลัก">
+  <div class="banner-overlay-wrap">
+    {hasBanner && (
+      <img
+        src={BANNER.src}
+        alt={BANNER.alt}
+        class="hero-banner-img"
+        width={BANNER.width}
+        height={BANNER.height}
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    )}
+    <div class="banner-overlay-panel">
+      <div class="banner-side-btns">
+        <a href={externalLink} class="banner-btn-link" aria-label={login.alt}>
+          <img src={login.src} alt={login.alt} width={login.width} height={login.height} loading="eager" decoding="async" />
+        </a>
+        <a href={externalLink} class="banner-btn-link" aria-label={register.alt}>
+          <img src={register.src} alt={register.alt} width={register.width} height={register.height} loading="eager" decoding="async" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

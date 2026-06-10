@@ -1,0 +1,23 @@
+---
+import { PROVIDER } from "@/lib/images";
+---
+
+<!-- GAME PROVIDERS -->
+<section class="section" aria-labelledby="providers-heading">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="providers-heading">ค่ายเกมชั้นนำที่ให้บริการ</h2>
+      <div class="gold-line"></div>
+    </header>
+    <div class="provider-single-wrap">
+      <img
+        src={PROVIDER.src}
+        alt={PROVIDER.alt}
+        width={PROVIDER.width}
+        height={PROVIDER.height}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </div>
+</section>

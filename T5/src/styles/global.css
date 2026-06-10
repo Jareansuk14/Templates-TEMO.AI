@@ -1,0 +1,896 @@
+@font-face {
+  font-family: "Sarabun";
+  src: url("../../Font/Sarabun-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sarabun";
+  src: url("../../Font/Sarabun-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sarabun";
+  src: url("../../Font/Sarabun-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sarabun";
+  src: url("../../Font/Sarabun-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+/* ==============================
+   RESET
+   ============================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+/* Fixed background image */
+.page-bg-img {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  pointer-events: none;
+}
+/* .page-bg-overlay — ดู theme.css */
+img, video { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul[role="list"], ol[role="list"] { list-style: none; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-sans); line-height: 1.3; font-weight: 700; }
+address { font-style: normal; }
+
+/* ==============================
+   ACCESSIBILITY
+   ============================== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  z-index: 9999;
+  font-weight: 600;
+}
+.skip-link:focus { top: 1rem; }
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+#main-content:focus {
+  outline: none;
+}
+
+/* ==============================
+   LAYOUT
+   ============================== */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+.section     { padding: 1.25rem var(--container-pad); background: transparent; }
+.section-alt { padding: 1.25rem var(--container-pad); background: transparent; }
+
+.section-intro { text-align: center; }
+.section.section-intro > .container { padding: 3.5rem 2.5rem; }
+.section-intro .section-header { margin-bottom: 2rem; }
+
+/* ==============================
+   TYPOGRAPHY — ยึด why-feat-content ทุกขนาดหน้าจอ
+   ============================== */
+.hero-below h1,
+.section-intro h2,
+.cta-section h2,
+.section-header h2,
+.page-header h1,
+.why-feat-content h2 {
+  font-size: var(--fz-heading);
+  line-height: var(--lh-heading);
+}
+
+.hero-below .hero-desc,
+.cta-desc,
+.section-desc,
+.section-header p,
+.page-header p,
+.why-feat-content p,
+.faq-answer {
+  font-size: var(--fz-body);
+  line-height: var(--lh-body);
+}
+
+.faq-item summary {
+  font-size: var(--fz-body);
+  line-height: var(--lh-heading);
+}
+
+/* Glass — ดู theme.css | padding แยกตาม section ด้านล่าง */
+.section > .container,
+.section-alt > .container { padding: 3rem 2.5rem; }
+
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+
+/* ==============================
+   BRAND PREFIX
+   ============================== */
+.section-brand {
+  display: inline-block;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.6rem;
+  color: var(--brand-highlight);
+}
+/* Inline ในหัวข้อ h1/h2 */
+h1 .section-brand,
+h2 .section-brand {
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: 0.04em;
+  margin-bottom: 0;
+  margin-right: 0.25em;
+  vertical-align: baseline;
+}
+
+/* ==============================
+   PERFORMANCE
+   ============================== */
+/* content-visibility: auto สำหรับ sections ใต้ fold (ลด render work) */
+.why-feature-section,
+.section-intro,
+.faq-footer,
+.cta-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+@media (hover: none) {
+  .btn-gold:hover,
+  .btn-outline-gold:hover,
+  .btn-ghost:hover { transform: none; filter: none; }
+}
+
+
+/* gold-line — ดู theme.css */
+
+/* ==============================
+   SECTION HEADER
+   ============================== */
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-header h2 { color: var(--color-text); }
+.section-header p { color: var(--color-text-muted); max-width: 560px; margin-inline: auto; margin-top: 0.75rem; }
+.section-header .section-brand { color: var(--brand-highlight); max-width: none; margin-top: 0; }
+
+/* ==============================
+   BUTTONS
+   ============================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  text-align: center;
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+}
+/* .btn-gold / .btn-outline-gold — ดู theme.css */
+.btn-ghost {
+  background: rgba(255,255,255,0.06);
+  color: var(--color-text);
+  border-color: var(--color-border-subtle);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.1); }
+.btn-lg { padding: 1rem 2.5rem; font-size: 1.125rem; }
+.btn-sm { padding: 0.5rem 1.25rem; font-size: 0.875rem; }
+
+
+/* ==============================
+   HEADER
+   ============================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
+}
+.header-inner { display: flex; align-items: center; gap: 1.5rem; height: var(--header-height); }
+.site-logo { display: flex; align-items: center; }
+.site-logo img { height: 64px; width: auto; }
+.main-nav { margin-left: auto; }
+.main-nav ul { display: flex; gap: 0.125rem; list-style: none; }
+.main-nav a {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+.main-nav a:hover { color: var(--color-primary); }
+.main-nav a[aria-current="page"] {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  font-weight: 700;
+}
+.header-actions { display: flex; gap: 0.75rem; align-items: center; margin-left: 1rem; }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+}
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--color-primary); border-radius: 2px; }
+.mobile-menu {
+  background: var(--color-bg-2);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem;
+}
+.mobile-menu ul { display: flex; flex-direction: column; gap: 0.25rem; list-style: none; }
+.mobile-menu a:not(.btn) {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+.mobile-menu a:not(.btn):hover { color: var(--color-primary); }
+.mobile-menu a:not(.btn)[aria-current="page"] {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ==============================
+   MOBILE BOTTOM NAV
+   ============================== */
+/* สี bottom nav — ดู theme.css */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.mobile-bottom-nav-list {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-height: var(--bottom-nav-height);
+}
+
+.mobile-bottom-nav-list > li {
+  flex: 1;
+  min-width: 0;
+}
+
+.mobile-bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  height: 100%;
+  min-height: var(--bottom-nav-height);
+  padding: 0.35rem 0.15rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  transition: color 0.15s, background 0.15s, filter 0.15s;
+}
+
+.mobile-bottom-nav-item:hover,
+.mobile-bottom-nav-item:focus-visible {
+  color: var(--bottom-nav-item-hover);
+}
+
+.mobile-bottom-nav-item.is-highlight {
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  margin-top: -0.25rem;
+  padding-top: 0.5rem;
+}
+
+.mobile-bottom-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mobile-bottom-nav-label {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==============================
+   HERO BANNER SECTION — เต็มจอ เด่น
+   ============================== */
+.hero-banner-section {
+  padding: 0;
+  background: transparent;
+  width: 100%;
+}
+.hero-banner-section > .container {
+  padding-inline: 0;
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: fill;
+  border-radius: 0;
+}
+
+/* ==============================
+   HERO BELOW — เนื้อหาใต้ banner
+   ============================== */
+.hero-below {
+  padding: 1.25rem var(--container-pad);
+  background: transparent;
+  text-align: center;
+}
+.hero-below > .container { padding: 3.5rem 2.5rem; }
+.hero-below h1 {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+.hero-below .hero-desc {
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  margin-inline: auto;
+}
+.hero-action-pair {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 760px;
+  margin-inline: auto;
+}
+.hero-action-link { flex: 1; min-width: 200px; display: block; cursor: pointer; }
+.hero-action-link img { width: 100%; border-radius: var(--radius-md); display: block; }
+
+/* ==============================
+   GAME IMAGE CARD
+   ============================== */
+.game-img-card {
+  display: block;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+}
+.game-img-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+
+/* ==============================
+   PROMO PREVIEW GRID (home)
+   ============================== */
+.promo-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* ==============================
+   PROMO IMAGE CARD (home preview)
+   ============================== */
+.promo-img-card {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+.promo-img-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==============================
+   PROMO FULL CARD (promotions page)
+   ============================== */
+.promo-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.promo-full-card {
+  display: block;
+  cursor: pointer;
+}
+
+.promo-full-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==============================
+   WHY FEATURE SECTION
+   ============================== */
+.why-feature-section { padding: 1.25rem var(--container-pad); background: transparent; }
+.why-feature-section > .container { padding: 3rem 2.5rem; }
+.why-feat-content { text-align: center; }
+.why-feat-content h2 {
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+.why-feat-content p { color: var(--color-text-muted); margin-bottom: 1.5rem; }
+
+/* ==============================
+   PROVIDER SINGLE WRAP
+   ============================== */
+.provider-single-wrap {
+  max-width: 960px;
+  margin-inline: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.provider-single-wrap img { width: 100%; height: auto; border-radius: var(--radius-lg); }
+
+/* ==============================
+   CTA SECTION
+   ============================== */
+.cta-section {
+  padding: 1.25rem var(--container-pad);
+  background: transparent;
+  text-align: center;
+}
+.cta-section > .container { padding: 3.5rem 2.5rem; }
+.cta-section h2 {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+.cta-section .hero-action-pair {
+  margin-top: 1.25rem;
+}
+.cta-section .hero-action-link img {
+  max-height: 120px;
+  object-fit: contain;
+  object-position: center;
+}
+.cta-desc,
+.section-desc { color: var(--color-text-muted); margin-bottom: 2rem; margin-inline: auto; }
+
+/* ==============================
+   PAGE HEADER
+   ============================== */
+.page-header {
+  padding: 1.25rem var(--container-pad) 0;
+  background: transparent;
+}
+.page-header > .container { padding: 2.5rem; }
+.page-header h1 {
+  color: var(--color-text);
+  margin-block: 0.75rem;
+}
+.page-header p { color: var(--color-text-muted); }
+
+/* ==============================
+   BREADCRUMB
+   ============================== */
+.breadcrumb { display: flex; gap: 0.5rem; align-items: center; font-size: 0.8125rem; color: var(--color-text-muted); }
+.breadcrumb a:hover { color: var(--color-primary); }
+.breadcrumb-sep { opacity: 0.4; }
+
+/* ==============================
+   CONTACT / LINE
+   ============================== */
+.line-card {
+  background: #1ecc65;
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 440px;
+  margin-inline: auto;
+  box-shadow: 0 8px 40px rgba(6,199,85,0.3);
+}
+.line-card .line-icon { font-size: 4rem; margin-bottom: 1rem; }
+.line-card h2 { color: white; font-size: 1.5rem; margin-bottom: 0.5rem; }
+.line-card p { color: rgba(255,255,255,0.85); font-size: 0.9375rem; margin-bottom: 1.5rem; }
+.line-id {
+  background: rgba(0,0,0,0.2);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+.line-qr { width: 180px; height: 180px; margin-inline: auto; margin-bottom: 1.5rem; border-radius: var(--radius-md); overflow: hidden; background: white; }
+.line-qr img { width: 100%; height: 100%; object-fit: fill; }
+
+/* ==============================
+   FAQ FOOTER (global)
+   ============================== */
+.faq-footer {
+  padding: 1.25rem var(--container-pad) 2rem;
+  background: transparent;
+}
+.faq-footer > .container { padding: 3rem 2.5rem; }
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 3rem;
+  max-width: 960px;
+  margin-inline: auto;
+}
+.faq-item { border-bottom: 1px solid var(--color-border-subtle); }
+.faq-item summary {
+  padding: 1.125rem 0;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-white);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-size: 1.25rem; color: var(--color-primary); flex-shrink: 0; }
+.faq-item[open] summary::after { content: "−"; }
+.faq-answer { padding-bottom: 1.125rem; color: var(--color-text-muted); }
+
+/* ==============================
+   RESPONSIVE — TABLET 1200px
+   ============================== */
+@media (max-width: 1200px) {
+  .hero-action-pair       { gap: 0.75rem; }
+  .faq-grid               { gap: 0 2rem; }
+}
+
+/* ==============================
+   RESPONSIVE — TABLET 1024px
+   ============================== */
+@media (max-width: 1024px) {
+  :is(.section, .section-alt, .hero-below, .why-feature-section, .cta-section, .faq-footer, .page-header) > .container,
+  .section.section-intro > .container { padding: 2.25rem 1.75rem; }
+
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+  .section-header         { margin-bottom: 2rem; }
+
+}
+
+/* ==============================
+   RESPONSIVE — MOBILE 768px
+   ============================== */
+@media (max-width: 768px) {
+  :root { --container-pad: 0.75rem; }
+
+  .mobile-bottom-nav { display: block; }
+
+  body {
+    padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Spacing */
+  .section, .section-alt      { padding: 0.625rem var(--container-pad); }
+  .why-feature-section        { padding-block: 0.625rem; }
+  .hero-below                 { padding: 0.625rem var(--container-pad); }
+  .faq-footer, .cta-section   { padding: 0.625rem var(--container-pad); }
+  .page-header                { padding-top: 0.625rem; padding-bottom: 0; }
+
+  /* Glass mobile — ดู theme.css */
+  :is(.section, .section-alt, .hero-below, .why-feature-section, .cta-section, .faq-footer, .page-header) > .container,
+  .section.section-intro > .container {
+    padding: 1.5rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+
+  /* Header */
+  .main-nav, .header-actions { display: none; }
+  .nav-toggle { display: flex; }
+  .site-logo img { height: 44px; }
+
+  /* Hero below */
+  .hero-action-pair       { flex-direction: column; gap: 0.5rem; margin-top: 1.25rem; }
+  .hero-action-link       { min-width: unset; flex: unset; width: 100%; }
+  .cta-section .hero-action-link img {
+    max-height: 58px;
+    object-fit: contain;
+    object-position: center;
+  }
+  .cta-section .hero-action-pair {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    max-width: 100%;
+  }
+  .cta-section .hero-action-link {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+
+  /* Grids */
+  .grid-4   { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .promo-grid-5 { grid-template-columns: 1fr; gap: 1.25rem; }
+  .promo-preview-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+
+  /* Why sections */
+  .why-feature-section > .container { padding: 1.75rem 1rem; }
+  .why-feat-content p      { margin-bottom: 1rem; }
+
+  /* Section header */
+  .section-header          { margin-bottom: 1.5rem; }
+
+  /* FAQ */
+  .faq-grid                { grid-template-columns: 1fr; gap: 0; }
+  .faq-item summary        { padding: 1rem 0; }
+
+  /* Contact */
+  .line-card  { padding: 2rem 1.25rem; }
+  .line-qr    { width: 140px; height: 140px; }
+
+  /* Buttons */
+  .btn-lg { padding: 0.875rem 1.5rem; font-size: 0.9375rem; }
+  .btn-sm { font-size: 0.8125rem; }
+}
+
+/* ==============================
+   RESPONSIVE — SMALL MOBILE 480px
+   ============================== */
+@media (max-width: 480px) {
+  :root { --container-pad: 0.625rem; }
+
+  .mobile-bottom-nav-label { font-size: 0.5625rem; }
+  .mobile-bottom-nav-icon svg { width: 20px; height: 20px; }
+  .mobile-bottom-nav-item.is-highlight .mobile-bottom-nav-icon svg { width: 22px; height: 22px; }
+
+  .section, .section-alt,
+  .why-feature-section,
+  .hero-below, .faq-footer,
+  .cta-section, .page-header { padding: 0.5rem var(--container-pad); }
+
+  :is(.section, .section-alt, .hero-below, .why-feature-section, .cta-section, .faq-footer, .page-header) > .container,
+  .section.section-intro > .container {
+    padding: 1.25rem 0.875rem;
+    border-radius: var(--radius-md);
+  }
+
+  .why-feature-section > .container {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .cta-section .hero-action-link img { max-height: 48px; }
+  .cta-section .hero-action-pair { gap: 0.375rem; }
+
+  .grid-4  { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  .promo-preview-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+
+  .line-card  { padding: 1.5rem 1rem; }
+  .line-qr    { width: 120px; height: 120px; }
+
+  .breadcrumb       { font-size: 0.6875rem; }
+}
+
+/* ==============================
+   RESPONSIVE — EXTRA SMALL 360px
+   ============================== */
+@media (max-width: 360px) {
+  :root { --container-pad: 0.5rem; }
+  .grid-4        { grid-template-columns: 1fr; }
+  .header-inner  { gap: 0.5rem; }
+  .site-logo img { height: 26px; }
+  .btn-sm        { padding: 0.4rem 0.875rem; font-size: 0.75rem; }
+}
+
+/* ============================================================
+   THEME STYLES (moved from theme.css)
+   ============================================================ */
+
+body {
+  background-color: var(--color-bg);
+}
+
+.page-bg-overlay {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--page-overlay);
+  pointer-events: none;
+}
+
+/* ============================================================
+   กระจก — กล่องเนื้อหา (Header ยกเว้น padding)
+   ============================================================ */
+:is(.section, .section-alt, .hero-below, .why-feature-section, .cta-section, .faq-footer, .page-header) > .container,
+.section.section-intro > .container {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-xl);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ============================================================
+   Header — กระจก
+   ============================================================ */
+.site-header {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-bottom: none;
+  box-shadow: var(--header-glass-shadow);
+}
+
+.site-header .main-nav a { color: var(--nav-text); }
+.site-header .main-nav a[aria-current="page"] {
+  color: var(--color-primary);
+  background: var(--nav-active-bg);
+  border-color: var(--color-primary);
+  font-weight: 700;
+}
+.site-header .mobile-menu a:not(.btn)[aria-current="page"] {
+  color: var(--brand-highlight);
+  background: var(--nav-active-bg);
+  border-color: var(--brand-highlight);
+  font-weight: 700;
+}
+
+/* ============================================================
+   ปุ่ม
+   ============================================================ */
+.btn-gold {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: var(--btn-primary-bg);
+  box-shadow: none;
+}
+.btn-gold:hover {
+  filter: none;
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.btn-outline-gold {
+  color: var(--btn-outline-text);
+  border-color: var(--btn-outline-text);
+}
+.btn-outline-gold:hover {
+  background: var(--color-primary-light);
+  box-shadow: none;
+}
+
+.section-alt,
+.why-feature-section.section-alt,
+.faq-footer {
+  background: transparent;
+  border: none;
+}
+
+.page-header {
+  background: transparent;
+}
+
+/* ============================================================
+   อื่นๆ
+   ============================================================ */
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  margin: 0.75rem auto 0;
+  border-radius: 999px;
+}
+
+.faq-item summary { color: var(--color-text); }
+.faq-item summary::after { color: var(--color-primary); }
+.breadcrumb a:hover { color: var(--color-primary); }
+
+.line-card {
+  box-shadow: 0 4px 16px rgba(6, 199, 85, 0.2);
+}
+
+/* ============================================================
+   Mobile bottom nav — สี & โทน
+   ============================================================ */
+.mobile-bottom-nav {
+  background: var(--glass-bg-mobile);
+  border-top: var(--glass-border-mobile);
+  box-shadow: var(--bottom-nav-bar-shadow);
+}
+
+.mobile-bottom-nav-item {
+  color: var(--bottom-nav-item-color);
+}
+
+.mobile-bottom-nav-item:hover,
+.mobile-bottom-nav-item:focus-visible {
+  color: var(--bottom-nav-item-hover);
+}
+
+.mobile-bottom-nav-item.is-active {
+  color: var(--bottom-nav-item-active);
+}
+
+.mobile-bottom-nav-item.is-highlight {
+  color: var(--bottom-nav-play-text);
+  background: var(--bottom-nav-play-bg);
+  box-shadow: var(--bottom-nav-play-shadow);
+}
+
+.mobile-bottom-nav-item.is-highlight:hover,
+.mobile-bottom-nav-item.is-highlight:focus-visible {
+  color: var(--bottom-nav-play-text);
+  filter: brightness(var(--bottom-nav-play-hover-brightness));
+}
+
+/* ============================================================
+   Mobile — กระจก (ปิด blur เพื่อ performance)
+   ============================================================ */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 72px;
+    --bottom-nav-height: 64px;
+  }
+
+  :is(.section, .section-alt, .hero-below, .why-feature-section, .cta-section, .faq-footer, .page-header) > .container,
+  .section.section-intro > .container {
+    background: var(--glass-bg-mobile);
+    backdrop-filter: none;
+    border: var(--glass-border-mobile);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --bottom-nav-height: 60px;
+  }
+}

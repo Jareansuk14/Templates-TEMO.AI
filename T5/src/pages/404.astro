@@ -1,0 +1,24 @@
+﻿---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE } from "@/config/site";
+---
+
+<BaseLayout
+  title={`404 — ไม่พบหน้าที่ต้องการ | ${SITE.name}`}
+  description="ขออภัย ไม่พบหน้าที่คุณกำลังมองหา กรุณากลับหน้าแรก"
+  noindex={true}
+>
+  <section style="min-height:calc(100vh - var(--header-height));display:flex;align-items:center;justify-content:center;padding:2rem;text-align:center;background:var(--color-bg)">
+    <div>
+      <p style="font-size:6rem;font-weight:900;color:var(--color-text);line-height:1;margin-bottom:1rem">404</p>
+      <h1 style="font-size:1.75rem;margin-bottom:0.75rem;color:var(--color-text)">ไม่พบหน้าที่ต้องการ</h1>
+      <p style="color:var(--color-text-muted);margin-bottom:2.5rem">
+        ขออภัย ไม่พบหน้าที่คุณกำลังมองหา อาจถูกย้ายหรือลบออกไปแล้ว
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="/" class="btn btn-gold">กลับหน้าแรก</a>
+        <a href="/contact/" class="btn btn-ghost">ติดต่อเรา</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

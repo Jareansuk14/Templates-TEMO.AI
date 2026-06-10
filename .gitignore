@@ -1,0 +1,49 @@
+# ============================================
+# Templates (T1–T5) — Astro source only
+# อัปโค้ดที่ใช้งาน ไม่อัปสิ่งที่ build/install สร้างได้
+# ============================================
+
+# --- Dependencies (npm install) ---
+**/node_modules/
+
+# --- Build output (npm run build) ---
+**/dist/
+
+# --- Astro cache / generated types ---
+**/.astro/
+
+# --- Deployment artifacts ---
+**/.vercel/
+
+# --- Environment & secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Source originals (ใช้แปลงเป็น webp ใน public แล้ว) ---
+**/Original-IMG/
+Original-IMG/
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- Misc caches ---
+.cache/
+**/.vite/
+.turbo/

@@ -1,0 +1,36 @@
+---
+import { GAME_CARDS } from "@/lib/images";
+
+interface Props {
+  externalLink: string;
+}
+const { externalLink } = Astro.props;
+---
+
+<section class="section section-alt section-intro" aria-labelledby="games-heading">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="games-heading">เกมที่เราให้บริการ</h2>
+      <div class="gold-line"></div>
+    </header>
+    <p class="section-desc">ที่นี่มีความบรรเทิงมากมายให้คุณเลือกไม่ว่าจะเป็น สล็อตออนไลน์ แทงบอล คาสิโนออนไลน์ หวยออนไลน์</p>
+    <div class="grid-4">
+      {GAME_CARDS.map(({ alt, src, width, height }) => (
+        <a
+          href={externalLink}
+          class="game-img-card"
+          aria-label={alt}
+        >
+          <img
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

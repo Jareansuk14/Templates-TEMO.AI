@@ -1,0 +1,29 @@
+---
+import { GAME_CARDS } from "@/lib/images";
+
+interface Props {
+  externalLink: string;
+}
+const { externalLink } = Astro.props;
+---
+
+<div class="games-strip" aria-label="เกมที่เราให้บริการ">
+  <div class="games-strip-inner">
+    {GAME_CARDS.map(({ alt, src, width, height }) => (
+      <a
+        href={externalLink}
+        class="game-img-card"
+        aria-label={alt}
+      >
+        <img
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    ))}
+  </div>
+</div>

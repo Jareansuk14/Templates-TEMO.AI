@@ -1,0 +1,18 @@
+# Local/generated files
+dist
+.vercel
+node_modules
+
+# Editor and log files
+.vscode
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.*
+
+# Source image folder that must not be deployed
+Original-IMG
+**/Original-IMG
+**/Original-IMG/**

@@ -1,0 +1,162 @@
+---
+import { SITE, EXTERNAL_LINK } from "@/config/site";
+import Header from "@/components/Header.astro";
+import MobileBottomNav from "@/components/MobileBottomNav.astro";
+import FAQSection from "@/components/FAQSection.astro";
+import themeStyles from "@/styles/theme.css?url";
+import globalStyles from "@/styles/global.css?url";
+import {
+  BACKGROUND,
+  BANNER,
+  getBackgroundSrc,
+  getLogoMimeType,
+  getLogoSrc,
+  getOgImageAlt,
+  getOgImageSrc,
+  hasBackgroundImage,
+  resolvePreloadImage,
+} from "@/lib/images";
+
+const externalOrigin = (() => {
+  try { return new URL(EXTERNAL_LINK).origin; } catch { return ""; }
+})();
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  ogType?: "website" | "article";
+  canonicalUrl?: string;
+  publishedDate?: string;
+  modifiedDate?: string;
+  noindex?: boolean;
+  jsonLd?: object | object[];
+  preloadImage?: string;
+}
+
+const {
+  title,
+  description,
+  keywords = "",
+  ogType = "website",
+  canonicalUrl = Astro.url.href,
+  publishedDate,
+  modifiedDate,
+  noindex = false,
+  jsonLd,
+  preloadImage,
+} = Astro.props;
+
+const ogImageSrc = getOgImageSrc();
+const ogImageAbsolute = `${SITE.url}${ogImageSrc}`;
+const ogImageAlt = getOgImageAlt();
+
+const baseJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.name,
+  url: SITE.url,
+};
+
+const pageJsonLd = jsonLd ?? {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  description,
+  url: canonicalUrl,
+  isPartOf: { "@type": "WebSite", name: SITE.name, url: SITE.url },
+};
+
+const structuredDataList = [baseJsonLd, ...(Array.isArray(pageJsonLd) ? pageJsonLd : [pageJsonLd])];
+const showBackgroundImage = hasBackgroundImage();
+const backgroundSrc = getBackgroundSrc();
+const safePreloadImage = resolvePreloadImage(preloadImage);
+const logoSrc = getLogoSrc();
+const logoMimeType = getLogoMimeType();
+---
+
+<!doctype html>
+<html lang={SITE.lang} dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#030712" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    {noindex
+      ? <meta name="robots" content="noindex, nofollow" />
+      : <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    }
+
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content={ogType} />
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url"         content={canonicalUrl} />
+    <meta property="og:site_name"   content={SITE.name} />
+    <meta property="og:image"       content={ogImageAbsolute} />
+    <meta property="og:image:width"  content={String(BANNER.width)} />
+    <meta property="og:image:height" content={String(BANNER.height)} />
+    <meta property="og:image:alt"   content={ogImageAlt} />
+    <meta property="og:locale"      content={SITE.locale} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image"       content={ogImageAbsolute} />
+    <meta name="twitter:image:alt"   content={ogImageAlt} />
+
+    {publishedDate && <meta property="article:published_time" content={publishedDate} />}
+    {modifiedDate  && <meta property="article:modified_time"  content={modifiedDate} />}
+
+    <!-- App styles (external link — reliable in dev & production) -->
+    <link rel="stylesheet" href={themeStyles} />
+    <link rel="stylesheet" href={globalStyles} />
+
+    <!-- Favicon & assets (โลโก้เดียวกับ Header) -->
+    <link rel="icon" href={logoSrc} type={logoMimeType} />
+    <link rel="apple-touch-icon" href={logoSrc} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Resource hints สำหรับลิงก์ภายนอก (dns-prefetch เท่านั้น — preconnect อาจ overhead) -->
+    {externalOrigin && <link rel="dns-prefetch" href={externalOrigin} />}
+
+    {safePreloadImage && safePreloadImage !== BACKGROUND.src && (
+      <link rel="preload" as="image" href={safePreloadImage} fetchpriority="high" />
+    )}
+
+    <!-- Structured Data -->
+    {structuredDataList.map((ld) => (
+      <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+    ))}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหาหลัก</a>
+    {showBackgroundImage && (
+      <img
+        src={backgroundSrc}
+        alt=""
+        class="page-bg-img"
+        aria-hidden="true"
+        width="1920"
+        height="1080"
+        loading="lazy"
+        fetchpriority="low"
+        decoding="async"
+      />
+    )}
+    <div class="page-bg-overlay" aria-hidden="true"></div>
+    <Header />
+    <main id="main-content" tabindex="-1">
+      <slot />
+      <FAQSection />
+    </main>
+    <MobileBottomNav />
+  </body>
+</html>
