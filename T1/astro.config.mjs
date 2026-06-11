@@ -2,7 +2,7 @@
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://www.temo888.club",
+  site: "https://yourdomain.com",
   integrations: [
     sitemap({
       changefreq: "weekly",

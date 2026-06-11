@@ -1,6 +1,6 @@
 ﻿export const SITE = {
   name: "TEMO888",
-  url: "https://www.temo888.club",
+  url: "https://yourdomain.com",
   lang: "th",
   locale: "th_TH",
 } as const;

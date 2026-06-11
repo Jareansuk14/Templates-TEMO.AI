@@ -47,3 +47,7 @@ Desktop.ini
 .cache/
 **/.vite/
 .turbo/
+
+# --- Packed archives created from this folder ---
+/*.zip
+/*.rar

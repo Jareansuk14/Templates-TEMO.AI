@@ -4,4 +4,4 @@ Allow: /
 Disallow: /thank-you/
 Disallow: /404/
 
-Sitemap: https://www.temo888.club/sitemap-index.xml
+Sitemap: https://yourdomain.com/sitemap-index.xml
