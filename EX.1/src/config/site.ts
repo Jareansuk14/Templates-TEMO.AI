@@ -1,11 +1,11 @@
 ﻿export const SITE = {
-  name: "TIGER888",
+  name: "TEMO888",
   url: "https://yourdomain.com",
   lang: "th",
   locale: "th_TH",
 } as const;
 
-export const BRAND_NAME = "TIGER888";
+export const BRAND_NAME = "TEMO888";
 
 export const EXTERNAL_LINK = "https://www.youtube.com/";
 
