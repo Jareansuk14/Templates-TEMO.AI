@@ -1,0 +1,9 @@
+{
+  "kind": "Cta",
+  "variant": "TextOnly",
+  "componentName": "CtaTextOnly",
+  "displayName": "CTA • ข้อความอย่างเดียว",
+  "astroFile": "CtaTextOnly.astro",
+  "cssFile": "CtaTextOnly.css",
+  "hasExternalLink": false
+}

@@ -1,0 +1,9 @@
+{
+  "kind": "Provider",
+  "variant": "Logos",
+  "componentName": "ProviderLogos",
+  "displayName": "ค่ายเกม",
+  "astroFile": "ProviderLogos.astro",
+  "cssFile": "ProviderLogos.css",
+  "hasExternalLink": false
+}

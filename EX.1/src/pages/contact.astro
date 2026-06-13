@@ -1,0 +1,65 @@
+﻿---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE, BRAND_NAME, LINE } from "@/config/site";
+import { getContactSeoHeading, getContactSeoDescription } from "@/lib/seo-content";
+import { LINE_QR } from "@/lib/images";
+
+const contactSeo = getContactSeoHeading();
+const pageDescription = getContactSeoDescription();
+
+const contactKeywords: string[] = [];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: `ติดต่อเรา — ${SITE.name}`,
+  url: `${SITE.url}/contact/`,
+  description: pageDescription,
+};
+---
+
+<BaseLayout
+  title={`ติดต่อเรา ${SITE.name} | ${contactSeo}`}
+  description={pageDescription}
+  keywords={[SITE.name, ...contactKeywords].join(", ")}
+  jsonLd={jsonLd}
+>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">หน้าแรก</a>
+        <span class="breadcrumb-sep" aria-hidden="true">/</span>
+        <span aria-current="page">ติดต่อเรา</span>
+      </nav>
+      <h1 id="contact-seo"><span class="section-brand">{BRAND_NAME}</span>บริการแชทสดภาษาไทย พร้อมช่วยทุกเวลา</h1>
+      <p id="sub-contact-seo">หากต้องการความช่วยเหลือ TIGER888 มีทีมบริการภาษาไทยพร้อมตอบผ่านแชทสดตลอด 24 ชั่วโมง ดูแลเรื่องสมัครสมาชิก ฝากถอนออโต้ รับโปรโมชัน ความปลอดภัยบัญชี และการเข้าเล่นเว็บตรงบนมือถือหรือคอมพิวเตอร์ ครอบคลุม คาสิโนออนไลน์ สล็อต บาคาร่า แทงบอล</p>
+    </div>
+  </section>
+
+  <!-- LINE CONTACT -->
+  <section class="section" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="line-card">
+        <div class="line-icon" aria-hidden="true">💬</div>
+        <h2 id="contact-heading">แอดไลน์ติดต่อเราได้เลย</h2>
+        <p>ทีมงานเราพร้อมตอบคุณตลอด 24 ชั่วโมง</p>
+
+        <div class="line-qr">
+          <img
+            src={LINE_QR.src}
+            alt={`QR Code LINE ${LINE.id}`}
+            width={LINE_QR.width}
+            height={LINE_QR.height}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="line-id">{LINE.id}</div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

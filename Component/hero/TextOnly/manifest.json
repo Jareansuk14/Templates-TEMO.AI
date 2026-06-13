@@ -1,0 +1,9 @@
+{
+  "kind": "Hero",
+  "variant": "TextOnly",
+  "componentName": "HeroTextOnly",
+  "displayName": "Hero • ข้อความอย่างเดียว",
+  "astroFile": "HeroTextOnly.astro",
+  "cssFile": "HeroTextOnly.css",
+  "hasExternalLink": false
+}

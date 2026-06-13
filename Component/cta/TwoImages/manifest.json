@@ -1,0 +1,9 @@
+{
+  "kind": "Cta",
+  "variant": "TwoImages",
+  "componentName": "CtaTwoImages",
+  "displayName": "CTA • 2 รูป",
+  "astroFile": "CtaTwoImages.astro",
+  "cssFile": "CtaTwoImages.css",
+  "hasExternalLink": true
+}

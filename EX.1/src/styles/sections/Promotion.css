@@ -1,0 +1,28 @@
+.promo-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.promo-img-card,
+.promo-full-card {
+  display: block;
+  cursor: pointer;
+}
+
+.promo-img-card img,
+.promo-full-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.promo-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .promo-grid-5 { grid-template-columns: 1fr; gap: 1.25rem; }
+}

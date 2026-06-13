@@ -1,0 +1,9 @@
+{
+  "kind": "Seo",
+  "variant": "Feature3",
+  "componentName": "SeoFeature3",
+  "displayName": "SEO • การ์ดรูป+ปุ่ม (3 หัวข้อ)",
+  "astroFile": "SeoFeature3.astro",
+  "cssFile": "SeoFeature3.css",
+  "hasExternalLink": true
+}

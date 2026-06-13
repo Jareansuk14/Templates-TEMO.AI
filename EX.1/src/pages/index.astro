@@ -1,0 +1,49 @@
+﻿---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Banner from "@/components/Banner.astro";
+import { SITE, EXTERNAL_LINK } from "@/config/site";
+import { getMainSeoHeading, getMainSeoDescription } from "@/lib/seo-content";
+import { BANNER, getLogoSrc } from "@/lib/images";
+import CtaOneImage from "@/components/sections/Cta.astro";
+import GameCards6 from "@/components/sections/Game.astro";
+import HeroTwoImages from "@/components/sections/Hero.astro";
+import PromotionSlide from "@/components/sections/Promotion.astro";
+import ProviderLogos from "@/components/sections/Provider.astro";
+import SeoRows3 from "@/components/sections/Seo.astro";
+import "@/styles/sections.generated.css";
+const mainSeo = getMainSeoHeading();
+const pageDescription = getMainSeoDescription();
+
+const indexKeywords: string[] = [];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.name,
+  url: SITE.url,
+  logo: `${SITE.url}${getLogoSrc()}`,
+  description: pageDescription,
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    availableLanguage: "Thai",
+  },
+};
+---
+
+<BaseLayout
+  title={`${SITE.name} | ${mainSeo}`}
+  description={pageDescription}
+  keywords={[SITE.name, ...indexKeywords].join(", ")}
+  ogType="website"
+  jsonLd={jsonLd}
+  preloadImage={BANNER.src}
+>
+  <Banner />
+  <HeroTwoImages externalLink={EXTERNAL_LINK} />
+  <GameCards6 externalLink={EXTERNAL_LINK} />
+  <SeoRows3 externalLink={EXTERNAL_LINK} />
+  <PromotionSlide externalLink={EXTERNAL_LINK} />
+  <CtaOneImage externalLink={EXTERNAL_LINK} />
+  <ProviderLogos />
+</BaseLayout>

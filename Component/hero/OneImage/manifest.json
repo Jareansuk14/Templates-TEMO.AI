@@ -1,0 +1,9 @@
+{
+  "kind": "Hero",
+  "variant": "OneImage",
+  "componentName": "HeroOneImage",
+  "displayName": "Hero • ข้อความ + 1 รูป",
+  "astroFile": "HeroOneImage.astro",
+  "cssFile": "HeroOneImage.css",
+  "hasExternalLink": true
+}

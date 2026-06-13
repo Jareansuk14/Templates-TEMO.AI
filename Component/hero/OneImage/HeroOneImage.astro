@@ -1,0 +1,21 @@
+---
+import { BRAND_NAME } from "@/config/site";
+import { ACTION_BUTTONS } from "@/lib/images";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+
+const register = ACTION_BUTTONS.register;
+---
+
+<section class="hero-below" aria-labelledby="main-seo">
+  <div class="container">
+    <h1 id="main-seo"><span class="section-brand">{BRAND_NAME}</span>เว็บตรง พนันออนไลน์ ครบทุกแนว คาสิโนออนไลน์ สล็อต บาคาร่า แทงบอล ออโต้ไว ปลอดภัยสูง ใช้งานง่ายบนมือถือ</h1>
+    <p class="hero-desc" id="sub-main-seo">TEMO888 ให้คุณเริ่ม พนันออนไลน์ อย่างมั่นใจบนเว็บตรงที่ผ่านการตรวจสอบ ระบบเข้ารหัสหลายชั้น ป้องกันบอท และยืนยันตัวตนแบบสองขั้น ข้ามอุปกรณ์ได้ทั้งมือถือ แท็บเล็ต และคอม อินเทอร์เฟซไทยล้วน มีโหมดมืดถนอมตา ฝากถอนออโต้เชื่อมธนาคารและวอลเล็ตหลัก เสร็จในไม่กี่วินาที พร้อมบันทึกธุรกรรมครบ คาสิโนออนไลน์ สล็อต บาคาร่า แทงบอล และกีฬาเสมือน เปิดโหมดทดลองและเครดิตต้อนรับสำหรับสมาชิกใหม่ ทุกเกมแสดงกติกาและค่า RTP ชัดเจน ทีมงานไทยดูแล 24 ชม. โปรโมชันอัปเดต เงื่อนไขโปร่งใส</p>
+    <div class="hero-action-pair hero-action-single">
+      <a href={externalLink} class="hero-action-link" aria-label={register.alt}>
+        <img src={register.src} alt={register.alt} width={register.width} height={register.height} loading="eager" decoding="async" />
+      </a>
+    </div>
+  </div>
+</section>

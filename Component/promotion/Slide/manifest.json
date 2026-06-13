@@ -1,0 +1,9 @@
+{
+  "kind": "Promotion",
+  "variant": "Slide",
+  "componentName": "PromotionSlide",
+  "displayName": "โปรโมชั่น • สไลด์",
+  "astroFile": "PromotionSlide.astro",
+  "cssFile": "PromotionSlide.css",
+  "hasExternalLink": true
+}

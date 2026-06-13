@@ -1,0 +1,9 @@
+{
+  "kind": "Cta",
+  "variant": "OneImage",
+  "componentName": "CtaOneImage",
+  "displayName": "CTA • 1 รูป",
+  "astroFile": "CtaOneImage.astro",
+  "cssFile": "CtaOneImage.css",
+  "hasExternalLink": true
+}

@@ -1,0 +1,8 @@
+.provider-single-wrap {
+  max-width: 960px;
+  margin-inline: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.provider-single-wrap img { width: 100%; height: auto; border-radius: var(--radius-lg); }
