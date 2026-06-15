@@ -39,7 +39,28 @@
 
 .hero-action-link { flex: 1; min-width: 200px; display: block; cursor: pointer; }
 
-.hero-action-link img { width: 100%; border-radius: var(--radius-md); display: block; }
+.hero-action-link img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+.hero-action-single {
+  max-width: min(480px, 100%);
+}
+
+.hero-action-single .hero-action-link {
+  flex: unset;
+  min-width: unset;
+  width: 100%;
+}
+
+.hero-action-single .hero-action-link img {
+  max-height: clamp(52px, 8vw + 32px, 120px);
+  object-fit: contain;
+  object-position: center;
+}
 
 .cta-section .hero-action-pair { margin-top: 1.25rem; }
 
@@ -51,10 +72,12 @@
 
 @media (max-width: 1200px) {
   .hero-action-pair { gap: 0.75rem; }
+  .hero-below > .container { padding: 2.75rem 2rem; }
 }
 
 @media (max-width: 768px) {
   .hero-below { padding: 0.625rem var(--container-pad); }
+  .hero-below > .container { padding: 2rem 1.25rem; }
   .hero-action-pair { flex-direction: column; gap: 0.5rem; margin-top: 1.25rem; }
   .hero-action-link { min-width: unset; flex: unset; width: 100%; }
   .hero-below .hero-action-pair {
@@ -74,6 +97,19 @@
       object-fit: contain;
       object-position: center;
     }
+  .hero-below .hero-action-single {
+      flex-direction: column;
+      max-width: min(420px, 100%);
+    }
+  .hero-below .hero-action-single .hero-action-link {
+      flex: unset;
+      width: 100%;
+      min-width: unset;
+    }
+  .hero-below .hero-action-single .hero-action-link img,
+  .cta-section .hero-action-single .hero-action-link img {
+      max-height: clamp(52px, 12vw + 20px, 88px);
+    }
   .cta-section .hero-action-pair {
       flex-direction: row;
       flex-wrap: nowrap;
@@ -85,12 +121,26 @@
       min-width: 0;
       width: auto;
     }
+  .cta-section .hero-action-single {
+      flex-direction: column;
+      max-width: min(420px, 100%);
+    }
+  .cta-section .hero-action-single .hero-action-link {
+      flex: unset;
+      width: 100%;
+      min-width: unset;
+    }
 }
 
 @media (max-width: 480px) {
   .hero-below { padding: 0.5rem var(--container-pad); }
+  .hero-below > .container { padding: 1.5rem 1rem; }
   .hero-below .hero-action-pair { gap: 0.375rem; }
   .hero-below .hero-action-link img,
   .cta-section .hero-action-link img { max-height: 48px; }
+  .hero-below .hero-action-single .hero-action-link img,
+  .cta-section .hero-action-single .hero-action-link img {
+      max-height: clamp(48px, 14vw + 16px, 72px);
+    }
   .cta-section .hero-action-pair { gap: 0.375rem; }
 }
