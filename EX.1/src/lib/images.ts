@@ -104,7 +104,7 @@ export const SEO_ARTICLE_IMAGES: Record<string, SeoArticleImage> = {
 
 /** QR ติดต่อ LINE */
 export const LINE_QR: SiteImage = {
-  src: "/images/QR.png",
+  src: "/images/QR.webp",
   width: 180,
   height: 180,
   alt: "",

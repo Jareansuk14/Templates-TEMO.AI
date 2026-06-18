@@ -10,7 +10,7 @@ export const BRAND_NAME = "TEMO888";
 export const EXTERNAL_LINK = "https://www.youtube.com/";
 
 export const LINE = {
-  id: "@tedx1",
+  id: "@121ikxwq",
 } as const;
 
 export const NAV_LINKS = [
