@@ -1,5 +1,4 @@
 ---
-import { BRAND_NAME } from "@/config/site";
 import { SEO_ARTICLE_IMAGES } from "@/lib/images";
 
 interface Props { externalLink: string; }
@@ -22,7 +21,7 @@ const whySections = [
           <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
         </a>
         <article class="seo-art-box" aria-labelledby={`${id}-title`}>
-          <h2 id={`${id}-title`}><span class="section-brand">{BRAND_NAME}</span>{heading}</h2>
+          <h2 id={`${id}-title`}>{heading}</h2>
           <p id={`sub-${id}`}>{desc}</p>
         </article>
       </div>

@@ -1,5 +1,4 @@
 ---
-import { BRAND_NAME } from "@/config/site";
 import { ACTION_BUTTONS, SEO_ARTICLE_IMAGES } from "@/lib/images";
 
 interface Props { externalLink: string; }
@@ -20,7 +19,7 @@ const whySections = [
     <div class="container"><div class="why-feature-grid">
       <a href={externalLink} class="why-feat-img-wrap" aria-label={image.alt}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></a>
       <div class="why-feat-content">
-        <h2 id={`${id}-title`}><span class="section-brand">{BRAND_NAME}</span>{heading}</h2>
+        <h2 id={`${id}-title`}>{heading}</h2>
         <p id={`sub-${id}`}>{desc}</p>
         <a href={externalLink} class="hero-action-link" aria-label={playBtn.alt}><img src={playBtn.src} alt={playBtn.alt} width={playBtn.width} height={playBtn.height} loading="lazy" decoding="async" /></a>
       </div>
