@@ -1,7 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
+import { BRAND_NAME } from "@/config/site";
 
 const SECTIONS_DIR = "src/components/sections";
+
+function stripLeadingBrand(text: string): string {
+  const trimmed = text.trim();
+  if (!trimmed.startsWith(BRAND_NAME)) return trimmed;
+  return trimmed.slice(BRAND_NAME.length).trimStart();
+}
 
 function readFileSafe(relPath: string): string {
   const filePath = path.join(process.cwd(), relPath);
@@ -12,9 +19,11 @@ function readFileSafe(relPath: string): string {
 function matchHeading(content: string, id: string): string {
   if (!content) return "";
   const pattern = new RegExp(
-    `<h1[^>]*\\bid="${id}"[^>]*><span[^>]*>[^<]*</span>([\\s\\S]*?)<\\/h1>`
+    `<h1[^>]*\\bid="${id}"[^>]*>([\\s\\S]*?)<\\/h1>`
   );
-  return content.match(pattern)?.[1]?.trim() ?? "";
+  const match = content.match(pattern);
+  if (!match?.[1]) return "";
+  return stripLeadingBrand(match[1].trim());
 }
 
 function matchDescription(content: string, id: string): string {
@@ -33,10 +42,6 @@ function getSeoDescription(relPath: string, id: string): string {
   return matchDescription(readFileSafe(relPath), id);
 }
 
-/**
- * Scan the swappable sections folder for the element carrying the given id.
- * This keeps SEO meta working no matter which Hero/section variant is active.
- */
 function scanSections(
   id: string,
   matcher: (content: string, id: string) => string
