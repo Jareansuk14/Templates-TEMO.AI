@@ -4,18 +4,17 @@ import { HERO } from "@/data/content/hero";
 
 interface Props { externalLink: string; }
 const { externalLink } = Astro.props;
-const { login, register } = ACTION_BUTTONS;
+const { register } = ACTION_BUTTONS;
 ---
 
-<section class="hero-band" aria-labelledby="main-seo">
-  <div class="container hero-band-grid">
-    <div class="hero-band-text">
+<section class="hero-compact" aria-labelledby="main-seo">
+  <div class="container hero-compact-row">
+    <div class="hero-compact-text">
       <h1 id="main-seo">{HERO.heading}</h1>
       <p id="sub-main-seo">{HERO.description}</p>
     </div>
-    <div class="hero-band-actions">
-      <a href={externalLink} aria-label={register.alt}><img src={register.src} alt={register.alt} width={register.width} height={register.height} loading="eager" decoding="async" /></a>
-      <a href={externalLink} aria-label={login.alt}><img src={login.src} alt={login.alt} width={login.width} height={login.height} loading="eager" decoding="async" /></a>
-    </div>
+    <a class="hero-compact-btn" href={externalLink} aria-label={register.alt}>
+      <img src={register.src} alt={register.alt} width={register.width} height={register.height} loading="eager" decoding="async" />
+    </a>
   </div>
 </section>

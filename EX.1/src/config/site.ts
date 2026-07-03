@@ -1,11 +1,11 @@
 ﻿export const SITE = {
-  name: "TEMO888",
+  name: "EX.1",
   url: "https://yourdomain.com",
   lang: "th",
   locale: "th_TH",
 } as const;
 
-export const BRAND_NAME = "TEMO888";
+export const BRAND_NAME = "EX.1";
 
 export const SITE_THEME = "คาสิโนออนไลน์";
 

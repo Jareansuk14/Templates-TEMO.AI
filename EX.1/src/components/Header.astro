@@ -6,7 +6,7 @@ const currentPath = Astro.url.pathname;
 const logoSrc = getLogoSrc();
 ---
 
-<header class="site-header hdr-classic" role="banner">
+<header class="site-header hdr-navright" role="banner">
   <div class="container">
     <div class="header-inner">
       <a href="/" class="site-logo" aria-label="กลับหน้าแรก">
@@ -50,3 +50,17 @@ const logoSrc = getLogoSrc();
     if (m) (m as HTMLElement).hidden = e;
   });
 </script>
+
+<style>
+.hdr-navright { top: 0.85rem; background: transparent; backdrop-filter: none; box-shadow: none; }
+.hdr-navright .header-inner { margin-block: 0.85rem; padding: 0.45rem 1.5rem; background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: var(--glass-border); border-radius: 999px; box-shadow: var(--glow-md); }
+.hdr-navright .site-logo img { height: 64px; }
+.hdr-navright .header-actions { margin-left: 1rem; }
+.hdr-navright .main-nav a,
+.hdr-navright .header-actions .btn { border-radius: 999px; }
+@media (max-width: 768px) {
+  .hdr-navright { top: 0.5rem; }
+  .hdr-navright .header-inner { margin-block: 0.5rem; padding-inline: 1rem; }
+  .hdr-navright .site-logo img { height: 64px; }
+}
+</style>

@@ -1,72 +1,181 @@
-.seo-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.seo-bs3 {
+  width: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-pad);
-  padding-block: 0.75rem;
+  padding-block: var(--section-pad-y);
 }
 
-.seo-row {
+.seo-bs3-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  align-items: center;
+  align-items: start;
 }
 
-.seo-row--reverse {
-  direction: rtl;
-}
-
-.seo-row--reverse > * {
-  direction: ltr;
-}
-
-.seo-img-link {
-  display: block;
-  cursor: pointer;
-}
-
-.seo-img-link img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius-md);
-}
-
-.seo-art-box {
+.seo-bs3-box {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
-  border-radius: var(--radius-xl);
   border: var(--glass-border);
-  padding: 2rem 1.5rem;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+}
+
+.seo-bs3-block {
+  position: relative;
+  z-index: 1;
   text-align: left;
   display: flex;
   flex-direction: column;
 }
 
-.seo-art-box h2 {
+.seo-bs3-block h2 {
   color: var(--color-text);
   font-size: var(--fz-heading);
   line-height: var(--lh-heading);
   margin-bottom: 0.75rem;
 }
 
-.seo-art-box p {
+.seo-bs3-block p {
   color: var(--color-text-muted);
   font-size: var(--fz-body);
   line-height: var(--lh-body);
   margin-bottom: 0;
-  flex: 1;
+}
+
+.seo-bs3-img:not(.seo-bs3-img--bottom),
+.seo-bs3-box {
+  align-self: center;
+}
+
+.seo-bs3-bottom {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: repeat(2, auto);
+  column-gap: 1.5rem;
+  row-gap: var(--seo-bs3-row-gap, 2rem);
+  align-items: start;
+}
+
+.seo-bs3-stack {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  display: grid;
+  grid-template-rows: subgrid;
+}
+
+.seo-bs3-stack .seo-bs3-block {
+  text-align: right;
+}
+
+.seo-bs3-timeline {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  display: grid;
+  grid-template-rows: subgrid;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 1rem;
+  z-index: 0;
+}
+
+.seo-bs3-timeline li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 0.55rem;
+}
+
+.seo-bs3-timeline li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: calc(0.55rem + 0.375rem);
+  width: 2px;
+  height: calc(100% + var(--seo-bs3-row-gap, 2rem));
+  transform: translateX(-50%);
+  background: var(--color-border-subtle);
+}
+
+.seo-bs3-timeline-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: var(--brand-highlight);
+  position: relative;
+  z-index: 1;
+}
+
+.seo-bs3-img--bottom {
+  grid-column: 3;
+  grid-row: 1 / -1;
+  align-self: center;
+}
+
+.seo-bs3-img {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.seo-bs3-img img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-xl);
 }
 
 @media (max-width: 768px) {
-  .seo-art-box {
+  .seo-bs3-grid { grid-template-columns: 1fr; }
+  .seo-bs3-img:not(.seo-bs3-img--bottom) { order: -4; }
+  .seo-bs3-box { order: -3; align-self: stretch; }
+  .seo-bs3-bottom {
+    order: -2;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 0;
+    gap: 1rem;
+  }
+  .seo-bs3-stack {
+    grid-row: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--seo-bs3-row-gap, 2rem);
+  }
+  .seo-bs3-timeline {
+    grid-column: 1;
+    grid-row: auto;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
+  .seo-bs3-timeline li {
+    padding-top: 0;
+    align-items: center;
+  }
+  .seo-bs3-timeline li:not(:last-child)::after {
+    top: 50%;
+    left: calc(100% + 0.25rem);
+    width: calc(var(--seo-bs3-row-gap, 2rem) + 1rem);
+    height: 2px;
+    transform: translateY(-50%);
+  }
+  .seo-bs3-img--bottom {
+    grid-column: 1;
+    grid-row: auto;
+    align-self: stretch;
+  }
+  .seo-bs3-box {
     background: var(--glass-bg-mobile);
     backdrop-filter: none;
     border: var(--glass-border-mobile);
   }
-  .seo-row { grid-template-columns: 1fr; }
-  .seo-row--reverse { direction: ltr; }
 }

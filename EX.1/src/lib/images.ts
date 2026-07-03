@@ -36,7 +36,7 @@ const IMAGE_MIME_BY_EXT: Record<string, string> = {
 /** Hero banner */
 export const BANNER = {
   src: "/images/banner.webp",
-  alt: "คำอธิบาย",
+  alt: "EX.1 banner",
   width: 1600,
   height: 900,
 } as const;
@@ -58,7 +58,7 @@ export const CTA_MASCOT: SiteImage = {
 /** SEO Mascot (ตัวละครโปร่งใส) */
 export const SEO_MASCOT: SiteImage = {
   src: "/images/seo-mascot.webp",
-  alt: "คำอธิบาย",
+  alt: "EX.1 SEO Mascot",
   width: 1024,
   height: 1024,
 };
@@ -81,15 +81,15 @@ export const LOGO = {
 export const ACTION_BUTTONS = {
   login: {
     src: "/images/login.webp",
-    alt: "เข้าสู่ระบบ",
+    alt: "EX.1 ปุ่มเข้าสู่ระบบ",
     width: 512,
-    height: 240,
+    height: 230,
   },
   register: {
     src: "/images/register.webp",
-    alt: "สมัครสมาชิก",
+    alt: "EX.1 ปุ่มสมัครสมาชิก",
     width: 512,
-    height: 240,
+    height: 230,
   },
   contact: {
     src: "/images/contact.webp",
@@ -101,12 +101,12 @@ export const ACTION_BUTTONS = {
 
 /** เกม 6 ประเภท */
 export const GAME_CARDS: SiteImage[] = [
-  { alt: "คำอธิบาย", src: "/images/game1.webp", width: 240, height: 512, },
-  { alt: "คำอธิบาย", src: "/images/game2.webp", width: 240, height: 512, },
-  { alt: "คำอธิบาย", src: "/images/game3.webp", width: 240, height: 512, },
-  { alt: "คำอธิบาย", src: "/images/game4.webp", width: 240, height: 512, },
-  { alt: "คำอธิบาย", src: "/images/game5.webp", width: 240, height: 512, },
-  { alt: "คำอธิบาย", src: "/images/game6.webp", width: 240, height: 512 },
+  { alt: "คำอธิบาย", src: "/images/game1.webp", width: 1024, height: 1536, },
+  { alt: "คำอธิบาย", src: "/images/game2.webp", width: 1024, height: 1536, },
+  { alt: "คำอธิบาย", src: "/images/game3.webp", width: 1024, height: 1536, },
+  { alt: "คำอธิบาย", src: "/images/game4.webp", width: 1024, height: 1536, },
+  { alt: "คำอธิบาย", src: "/images/game5.webp", width: 1024, height: 1536, },
+  { alt: "คำอธิบาย", src: "/images/game6.webp", width: 1024, height: 1536 },
 ];
 
 /** ค่ายเกม */
@@ -119,18 +119,18 @@ export const PROVIDER: SiteImage = {
 
 /** โปรโมชั่น (หน้า promotions + preview หน้าแรก) */
 export const PROMOS: PromoImage[] = [
-  { src: "/images/promo1.webp", alt: "[ชื่อโปรโมชั่น 1 — เช่น: โบนัสต้อนรับ 100%]", width: 1600, height: 900 },
-  { src: "/images/promo2.webp", alt: "[ชื่อโปรโมชั่น 2 — เช่น: โบนัสรายวัน 20%]", width: 1600, height: 900 },
-  { src: "/images/promo3.webp", alt: "[ชื่อโปรโมชั่น 3 — เช่น: คืนยอดเสีย 5%]", width: 1600, height: 900 },
-  { src: "/images/promo4.webp", alt: "[ชื่อโปรโมชั่น 4 — เช่น: แนะนำเพื่อน รับ X%]", width: 1600, height: 900 },
+  { src: "/images/promo1.webp", alt: "EX.1 โปรสมัครใหม่ รับโบนัสต้อนรับ 120%", width: 1536, height: 864 },
+  { src: "/images/promo2.webp", alt: "EX.1 รีโหลดโบนัส ฝากเพิ่มรับ 40%", width: 1536, height: 864 },
+  { src: "/images/promo3.webp", alt: "EX.1 สมาชิกเก่ากลับมา รับโบนัส 15%", width: 1536, height: 864 },
+  { src: "/images/promo4.webp", alt: "EX.1 ฟรีสปินประจำวัน 25 ครั้ง", width: 1536, height: 864 },
+  { src: "/images/promo5.webp", alt: "EX.1 โบนัสคืนยอดเสีย 7%", width: 1536, height: 864 },
+  { src: "/images/promo6.webp", alt: "EX.1 โบนัสคืนยอดเสีย 1%", width: 1536, height: 864 },
 ];
 
 /** รูปบทความ SEO */
 export const SEO_ARTICLE_IMAGES: Record<string, SeoArticleImage> = {
-  "seo-1": { src: "/images/seo1.webp", alt: "คำอธิบาย", width: 1600, height: 900 },
-  "seo-2": { src: "/images/seo2.webp", alt: "คำอธิบาย", width: 1600, height: 900 },
-  "seo-3": { src: "/images/seo3.webp", alt: "คำอธิบาย", width: 1600, height: 900 },
-
+  "seo-1": { src: "/images/seo1.webp", alt: "EX.1 เว็บตรงทันสมัย ทุกวัน", width: 1536, height: 864 },
+  "seo-2": { src: "/images/seo2.webp", alt: "EX.1 ฝากถอนทันใจ ไม่ต้องรอนาน", width: 1536, height: 864 },
 };
 
 /** QR ติดต่อ LINE */

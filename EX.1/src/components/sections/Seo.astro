@@ -4,22 +4,45 @@ import { SEO } from "@/data/content/seo";
 
 interface Props { externalLink: string; }
 const { externalLink } = Astro.props;
+
+const [first, second, third] = SEO.slice(0, 3);
+const topImage = SEO_ARTICLE_IMAGES[first.id];
+const bottomImage = SEO_ARTICLE_IMAGES[second.id];
 ---
 
-<div class="seo-rows">
-  {SEO.map(({ id, heading, desc }, index) => {
-    const image = SEO_ARTICLE_IMAGES[id];
-    const isEven = index % 2 === 1;
-    return (
-      <div class={`seo-row${isEven ? " seo-row--reverse" : ""}`}>
-        <a href={externalLink} class="seo-img-link" aria-label={image.alt} id={id}>
-          <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
-        </a>
-        <article class="seo-art-box" aria-labelledby={`${id}-title`}>
-          <h2 id={`${id}-title`}>{heading}</h2>
-          <p id={`sub-${id}`}>{desc}</p>
+<div class="seo-bs3">
+  <div class="seo-bs3-grid">
+    <a href={externalLink} class="seo-bs3-img" aria-label={topImage.alt} id={first.id}>
+      <img src={topImage.src} alt={topImage.alt} width={topImage.width} height={topImage.height} loading="lazy" decoding="async" />
+    </a>
+
+    <div class="seo-bs3-box">
+      <article class="seo-bs3-block" aria-labelledby={`${first.id}-title`}>
+        <h2 id={`${first.id}-title`}>{first.heading}</h2>
+        <p id={`sub-${first.id}`}>{first.desc}</p>
+      </article>
+    </div>
+
+    <div class="seo-bs3-bottom">
+      <div class="seo-bs3-stack">
+        <article class="seo-bs3-block" aria-labelledby={`${second.id}-title`}>
+          <h2 id={`${second.id}-title`}>{second.heading}</h2>
+          <p id={`sub-${second.id}`}>{second.desc}</p>
+        </article>
+        <article class="seo-bs3-block" aria-labelledby={`${third.id}-title`}>
+          <h2 id={`${third.id}-title`}>{third.heading}</h2>
+          <p id={`sub-${third.id}`}>{third.desc}</p>
         </article>
       </div>
-    );
-  })}
+
+      <ol class="seo-bs3-timeline" aria-hidden="true">
+        <li><span class="seo-bs3-timeline-dot"></span></li>
+        <li><span class="seo-bs3-timeline-dot"></span></li>
+      </ol>
+
+      <a href={externalLink} class="seo-bs3-img seo-bs3-img--bottom" aria-label={bottomImage.alt} id={second.id}>
+        <img src={bottomImage.src} alt={bottomImage.alt} width={bottomImage.width} height={bottomImage.height} loading="lazy" decoding="async" />
+      </a>
+    </div>
+  </div>
 </div>

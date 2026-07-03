@@ -1,73 +1,73 @@
-:root {
+﻿:root {
 
   /* =========================
      BRAND COLORS — GOLD / BLACK
   ========================== */
 
-  --color-primary:        #E6A91A;
-  --color-primary-light:  rgba(255, 193, 46, 0.14);
-  --color-accent:         #FFD36A;
-  --color-on-primary:     #120B02;
+  --color-primary:        #A855F7;
+  --color-primary-light:  rgba(168, 85, 247, 0.22);
+  --color-accent:         #18D3B7;
+  --color-on-primary:     #FFFFFF;
 
   /* =========================
      BACKGROUND (warm near-black)
   ========================== */
 
-  --color-bg:             #030201;
-  --color-bg-2:           #090604;
-  --color-bg-3:           #171006;
+  --color-bg:             #07020D;
+  --color-bg-2:           #160622;
+  --color-bg-3:           #0B0314;
 
   /* =========================
      BORDER
   ========================== */
 
-  --color-border:         rgba(255, 190, 45, 0.34);
-  --color-border-subtle:  rgba(255, 190, 45, 0.16);
+  --color-border:         rgba(246, 211, 107, 0.38);
+  --color-border-subtle:  rgba(168, 85, 247, 0.22);
 
   /* =========================
      TEXT
   ========================== */
 
-  --color-text:           #FFF3C7;
-  --color-text-muted:     #E1CC9D;
+  --color-text:           #F4ECFF;
+  --color-text-muted:     #C7B6D9;
   --color-white:          #ffffff;
 
   /* =========================
      BRAND HIGHLIGHT
   ========================== */
 
-  --brand-highlight:      #FFC12E;
+  --brand-highlight:      #F6D36B;
 
   /* =========================
      GLASS EFFECT
   ========================== */
 
-  --glass-bg: rgba(5, 4, 2, 0.72);
+  --glass-bg: rgba(7, 2, 13, 0.78);
   --glass-blur: blur(14px);
-  --glass-border: 1px solid rgba(255, 193, 46, 0.28);
+  --glass-border: 1px solid rgba(246, 211, 107, 0.26);
 
-  --glass-bg-mobile: rgba(5, 4, 2, 0.9);
-  --glass-border-mobile: 1px solid rgba(255, 193, 46, 0.36);
+  --glass-bg-mobile: rgba(7, 2, 13, 0.92);
+  --glass-border-mobile: 1px solid rgba(246, 211, 107, 0.34);
 
   /* =========================
      HEADER
   ========================== */
 
   --header-glass-shadow:
-      0 1px 0 rgba(255, 193, 46, 0.18), 0 8px 28px rgba(0, 0, 0, 0.72), 0 0 18px rgba(255, 174, 0, 0.14);
+      0 1px 0 rgba(246, 211, 107, 0.22), 0 8px 30px rgba(0, 0, 0, 0.78), 0 0 24px rgba(168, 85, 247, 0.24);
 
-  --nav-text:      #FFE9A3;
-  --nav-active-bg: rgba(255, 193, 46, 0.18);
+  --nav-text:      #F4ECFF;
+  --nav-active-bg: rgba(168, 85, 247, 0.22);
 
   /* =========================
      BUTTONS
   ========================== */
 
-  --btn-primary-bg:   #FFC12E;
+  --btn-primary-bg:   #A855F7;
 
-  --btn-primary-text: #120B02;
+  --btn-primary-text: #FFFFFF;
 
-  --btn-outline-text: #FFD36A;
+  --btn-outline-text: #F6D36B;
 
   --action-btn-h: 120px;
 
@@ -75,15 +75,15 @@
      OVERLAY
   ========================== */
 
-  --page-overlay: rgba(2, 1, 0, 0.78);
+  --page-overlay: rgba(7, 2, 13, 0.82);
 
   /* =========================
      GLOW EFFECTS (subtle)
   ========================== */
 
-  --glow-sm: 0 0 10px rgba(255, 193, 46, 0.28);
-  --glow-md: 0 0 20px rgba(255, 193, 46, 0.34);
-  --glow-lg: 0 0 36px rgba(255, 174, 0, 0.38);
+  --glow-sm: 0 0 10px rgba(168, 85, 247, 0.34);
+  --glow-md: 0 0 22px rgba(168, 85, 247, 0.42);
+  --glow-lg: 0 0 40px rgba(168, 85, 247, 0.48);
 
   /* =========================
      TYPOGRAPHY
@@ -131,17 +131,17 @@
   --bottom-nav-height: 64px;
 
   --bottom-nav-bar-shadow:
-      0 -4px 24px rgba(0, 0, 0, 0.78), 0 0 18px rgba(255, 193, 46, 0.12);
+      0 -4px 24px rgba(0, 0, 0, 0.82), 0 0 20px rgba(168, 85, 247, 0.22);
 
   --bottom-nav-item-color: var(--nav-text);
   --bottom-nav-item-hover: var(--brand-highlight);
   --bottom-nav-item-active: var(--brand-highlight);
 
-  --bottom-nav-play-bg: linear-gradient(180deg, #FFE28A 0%, #FFC12E 42%, #C98208 100%);
-  --bottom-nav-play-text: #120B02;
+  --bottom-nav-play-bg: linear-gradient(180deg, #F8E7A1 0%, #F6D36B 45%, #B98224 100%);
+  --bottom-nav-play-text: #07020D;
 
   --bottom-nav-play-shadow:
-      0 -3px 18px rgba(0, 0, 0, 0.72), 0 0 24px rgba(255, 193, 46, 0.36);
+      0 -3px 18px rgba(0, 0, 0, 0.76), 0 0 26px rgba(246, 211, 107, 0.38);
 
   --bottom-nav-play-hover-brightness: 1.08;
 }

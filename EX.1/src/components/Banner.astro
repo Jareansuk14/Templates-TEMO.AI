@@ -1,15 +1,33 @@
 ---
-import { BANNER, hasBannerImage } from "@/lib/images";
+import { BANNER, hasBannerImage, ACTION_BUTTONS } from "@/lib/images";
+import { EXTERNAL_LINK } from "@/config/site";
 const hasBanner = hasBannerImage();
+const { login, register } = ACTION_BUTTONS;
 ---
 
-<section class="bn-full" aria-label="แบนเนอร์หลัก">
-  {hasBanner && (
-    <img src={BANNER.src} alt={BANNER.alt} width={BANNER.width} height={BANNER.height} loading="eager" fetchpriority="high" decoding="async" />
-  )}
+<section class="bn-sp" aria-label="แบนเนอร์หลัก">
+  <div class="container bn-sp-grid">
+    <div class="bn-sp-actions">
+      <a href={EXTERNAL_LINK} aria-label={register.alt}><img src={register.src} alt={register.alt} width={register.width} height={register.height} loading="eager" decoding="async" /></a>
+      <a href={EXTERNAL_LINK} aria-label={login.alt}><img src={login.src} alt={login.alt} width={login.width} height={login.height} loading="eager" decoding="async" /></a>
+    </div>
+    <div class="bn-sp-img">
+      {hasBanner && (
+        <img src={BANNER.src} alt={BANNER.alt} width={BANNER.width} height={BANNER.height} loading="eager" fetchpriority="high" decoding="async" />
+      )}
+    </div>
+  </div>
 </section>
 
 <style>
-.bn-full { display: block; }
-.bn-full img { width: 100%; height: auto; display: block; }
+.bn-sp { padding: 1.25rem var(--container-pad); }
+.bn-sp-grid { max-width: var(--container-max); margin-inline: auto; display: grid; grid-template-columns: 1fr 2fr; gap: 1.25rem; align-items: center; }
+.bn-sp-img img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); }
+.bn-sp-actions { display: flex; flex-direction: column; gap: 0.85rem; }
+.bn-sp-actions img { width: 100%; height: auto; display: block; border-radius: var(--radius-md); }
+@media (min-width: 769px) { .bn-sp-actions { gap: 3rem; } }
+@media (max-width: 768px) {
+  .bn-sp-grid { grid-template-columns: 1fr; }
+  .bn-sp-actions { flex-direction: row; gap: 1rem; justify-content: center; align-items: center; }
+}
 </style>
