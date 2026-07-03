@@ -1,8 +1,8 @@
-﻿---
+---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { SITE, LINE } from "@/config/site";
+import { SITE } from "@/config/site";
 import { getContactSeoHeading, getContactSeoDescription } from "@/lib/seo-content";
-import { LINE_QR } from "@/lib/images";
+import ContactBody from "@/components/page/ContactBody.astro";
 
 const contactSeo = getContactSeoHeading();
 const pageDescription = getContactSeoDescription();
@@ -24,42 +24,5 @@ const jsonLd = {
   keywords={[SITE.name, ...contactKeywords].join(", ")}
   jsonLd={jsonLd}
 >
-
-  <!-- PAGE HEADER -->
-  <section class="page-header">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">หน้าแรก</a>
-        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <span aria-current="page">ติดต่อเรา</span>
-      </nav>
-      <h1 id="contact-seo">ซัพพอร์ต TEMO888 ดูแลเกมสล็อต ฝากถอนออโต้ไว</h1>
-      <p id="sub-contact-seo">หากเจอปัญหาเครดิตไม่เข้า เข้าเกมสล็อตไม่ได้ หรือโบนัสฟรีสปินไม่แสดง ทีมซัพพอร์ต TEMO888 ช่วยตรวจสอบเป็นขั้นตอน แนะนำให้เตรียมยูสเซอร์ เวลาเล่น ชื่อค่ายเกม และภาพหน้าจอไว้ จะช่วยให้แก้ไขไวขึ้น เหมาะกับผู้เล่นสล็อตเว็บตรงที่ต้องการความต่อเนื่องและไม่อยากเสียจังหวะ</p>
-    </div>
-  </section>
-
-  <!-- LINE CONTACT -->
-  <section class="section" aria-labelledby="contact-heading">
-    <div class="container">
-      <div class="line-card">
-        <div class="line-icon" aria-hidden="true">💬</div>
-        <h2 id="contact-heading">แอดไลน์ติดต่อเราได้เลย</h2>
-        <p>ทีมงานเราพร้อมตอบคุณตลอด 24 ชั่วโมง</p>
-
-        <div class="line-qr">
-          <img
-            src={LINE_QR.src}
-            alt={`QR Code LINE ${LINE.id}`}
-            width={LINE_QR.width}
-            height={LINE_QR.height}
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-
-        <div class="line-id">{LINE.id}</div>
-      </div>
-    </div>
-  </section>
-
+  <ContactBody />
 </BaseLayout>

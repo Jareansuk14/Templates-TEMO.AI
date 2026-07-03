@@ -1,0 +1,36 @@
+---
+import { EXTERNAL_LINK } from "@/config/site";
+import { PROMOTIONS_PAGE } from "@/data/content/promotionsPage";
+import { getPromoPreview } from "@/lib/images";
+
+const promos = getPromoPreview(4);
+---
+
+<section class="ppg-list-head">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span aria-current="page">โปรโมชั่น</span></nav>
+    <h1 id="promotion-seo">{PROMOTIONS_PAGE.heading}</h1>
+    <p id="sub-promotion-seo">{PROMOTIONS_PAGE.description}</p>
+  </div>
+</section>
+
+<section class="ppg-list">
+  <div class="container">
+    {promos.map(({ src, alt, width, height }, i) => (
+      <a href={EXTERNAL_LINK} class="ppg-list-item" aria-label={alt}>
+        <img src={src} alt={alt} width={width} height={height} loading={i < 1 ? "eager" : "lazy"} decoding="async" />
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+.ppg-list-head { padding: 2rem var(--container-pad) 1rem; }
+.ppg-list-head > .container { max-width: 900px; margin-inline: auto; }
+.ppg-list-head h1 { color: var(--color-text); font-size: var(--fz-page-title); margin: 0.75rem 0 0.5rem; }
+.ppg-list-head p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); }
+.ppg-list { padding: 1rem var(--container-pad) 2.5rem; }
+.ppg-list > .container { max-width: 900px; margin-inline: auto; display: flex; flex-direction: column; gap: 1.5rem; }
+.ppg-list-item { display: block; }
+.ppg-list-item img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); }
+</style>

@@ -1,0 +1,8 @@
+﻿.hero-grad { padding: var(--section-pad-y) var(--container-pad); }
+.hero-grad-panel { max-width: var(--container-max); margin-inline: auto; text-align: center; border-radius: var(--radius-xl); padding: 3rem 2rem; background: linear-gradient(135deg, var(--color-bg-3) 0%, var(--color-bg-2) 60%, var(--color-bg) 100%); border: 1px solid var(--color-border-subtle); }
+.hero-grad h1 { font-size: var(--fz-hero-title); color: var(--color-text); margin-bottom: 1rem; line-height: 1.25; }
+.hero-grad p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin-bottom: 1.75rem; max-width: 760px; margin-inline: auto; }
+.hero-grad-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; max-width: 620px; margin-inline: auto; }
+.hero-grad-actions a { flex: 1; min-width: 170px; }
+.hero-grad-actions img { width: 100%; border-radius: var(--radius-md); display: block; }
+@media (max-width: 768px) { .hero-grad-panel { padding: 1.75rem 1rem; } .hero-grad-actions { flex-wrap: nowrap; gap: 0.5rem; } .hero-grad-actions a { min-width: 0; } .hero-grad-actions img { max-height: 58px; object-fit: contain; } }

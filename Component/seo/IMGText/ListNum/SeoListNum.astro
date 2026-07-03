@@ -1,0 +1,17 @@
+---
+import { SEO } from "@/data/content/seo";
+---
+
+<section class="seo-num" aria-label="ข้อมูลเด่น">
+  <div class="container">
+    {SEO.map(({ id, heading, desc }, i) => (
+      <article class="seo-num-row" aria-labelledby={`${id}-title`}>
+        <span class="seo-num-badge" aria-hidden="true">{i + 1}</span>
+        <div class="seo-num-body">
+          <h2 id={`${id}-title`}>{heading}</h2>
+          <p id={`sub-${id}`}>{desc}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

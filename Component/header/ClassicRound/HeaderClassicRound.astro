@@ -1,0 +1,56 @@
+---
+import { EXTERNAL_LINK, NAV_LINKS, isActivePath, BRAND_NAME } from "@/config/site";
+import { getLogoSrc, LOGO } from "@/lib/images";
+
+const currentPath = Astro.url.pathname;
+const logoSrc = getLogoSrc();
+---
+
+<header class="site-header hdr-classicround" role="banner">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="site-logo" aria-label="กลับหน้าแรก">
+        <img src={logoSrc} alt={`${BRAND_NAME} Logo`} width={LOGO.width} height={LOGO.height} loading="eager" fetchpriority="high" decoding="async" />
+      </a>
+      <nav class="main-nav" aria-label="เมนูหลัก">
+        <ul role="list">
+          {NAV_LINKS.map(({ href, label }) => (
+            <li><a href={href} aria-current={isActivePath(currentPath, href) ? "page" : undefined}>{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href={EXTERNAL_LINK} class="btn btn-outline-gold btn-sm">เข้าสู่ระบบ</a>
+        <a href={EXTERNAL_LINK} class="btn btn-gold btn-sm">สมัครสมาชิก</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="เปิดเมนู"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile-menu" hidden>
+    <nav aria-label="เมนูมือถือ">
+      <ul role="list">
+        {NAV_LINKS.map(({ href, label }) => (
+          <li><a href={href} aria-current={isActivePath(currentPath, href) ? "page" : undefined}>{label}</a></li>
+        ))}
+        <li style="display:flex;gap:.5rem;padding:.5rem 1rem">
+          <a href={EXTERNAL_LINK} class="btn btn-outline-gold btn-sm" style="flex:1">เข้าสู่ระบบ</a>
+          <a href={EXTERNAL_LINK} class="btn btn-gold btn-sm" style="flex:1">สมัครสมาชิก</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const t = document.querySelector(".nav-toggle");
+  const m = document.getElementById("mobile-menu");
+  t?.addEventListener("click", () => {
+    const e = t.getAttribute("aria-expanded") === "true";
+    t.setAttribute("aria-expanded", String(!e));
+    if (m) (m as HTMLElement).hidden = e;
+  });
+</script>
+
+<style>
+.hdr-classicround { border-radius: 0 0 40px 40px; }
+</style>

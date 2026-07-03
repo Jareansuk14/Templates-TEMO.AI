@@ -1,0 +1,19 @@
+---
+import { ACTION_BUTTONS } from "@/lib/images";
+import { HERO } from "@/data/content/hero";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+const { login, register } = ACTION_BUTTONS;
+---
+
+<section class="hero-grad" aria-labelledby="main-seo">
+  <div class="container hero-grad-panel">
+    <h1 id="main-seo">{HERO.heading}</h1>
+    <p id="sub-main-seo">{HERO.description}</p>
+    <div class="hero-grad-actions">
+      <a href={externalLink} aria-label={login.alt}><img src={login.src} alt={login.alt} width={login.width} height={login.height} loading="eager" decoding="async" /></a>
+      <a href={externalLink} aria-label={register.alt}><img src={register.src} alt={register.alt} width={register.width} height={register.height} loading="eager" decoding="async" /></a>
+    </div>
+  </div>
+</section>

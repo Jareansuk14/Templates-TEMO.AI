@@ -1,0 +1,24 @@
+{
+  "kind": "Header",
+  "variant": "SplitRound",
+  "componentName": "HeaderSplitRound",
+  "displayName": "Header • เมนูซ้าย โลโก้กลาง มุมมน",
+  "astroFile": "HeaderSplitRound.astro",
+  "slot": "header",
+  "required": true,
+  "weight": 5,
+  "hasExternalLink": false,
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [],
+  "images": [
+    {
+      "id": "logo",
+      "role": "logo",
+      "ratio": "1:1",
+      "required": false
+    }
+  ]
+}

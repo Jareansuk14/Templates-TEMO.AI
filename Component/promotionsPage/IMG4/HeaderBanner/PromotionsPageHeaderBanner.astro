@@ -1,0 +1,35 @@
+---
+import { EXTERNAL_LINK } from "@/config/site";
+import { PROMOTIONS_PAGE } from "@/data/content/promotionsPage";
+import { getPromoPreview } from "@/lib/images";
+
+const promos = getPromoPreview(4);
+---
+
+<section class="ppg-hb-head">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span aria-current="page">โปรโมชั่น</span></nav>
+    <h1 id="promotion-seo">{PROMOTIONS_PAGE.heading}</h1>
+    <p id="sub-promotion-seo">{PROMOTIONS_PAGE.description}</p>
+  </div>
+</section>
+
+<section class="ppg-hb">
+  <div class="container ppg-hb-grid">
+    {promos.map(({ src, alt, width, height }) => (
+      <a href={EXTERNAL_LINK} class="ppg-hb-card" aria-label={alt}>
+        <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+      </a>
+    ))}
+  </div>
+</section>
+
+<style>
+.ppg-hb-head { padding: 3rem var(--container-pad); text-align: center; background: radial-gradient(ellipse at top, var(--color-bg-3), var(--color-bg)); border-bottom: 1px solid var(--color-border-subtle); }
+.ppg-hb-head h1 { color: var(--color-primary); font-size: var(--fz-page-title); margin: 0.75rem 0 0.5rem; }
+.ppg-hb-head p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); max-width: 760px; margin-inline: auto; }
+.ppg-hb { padding: 2rem var(--container-pad); }
+.ppg-hb-grid { max-width: var(--container-max); margin-inline: auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.ppg-hb-card img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); }
+@media (max-width: 640px) { .ppg-hb-grid { grid-template-columns: 1fr; } }
+</style>

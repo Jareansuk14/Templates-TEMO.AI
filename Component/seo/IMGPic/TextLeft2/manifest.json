@@ -1,0 +1,37 @@
+{
+  "kind": "Seo",
+  "variant": "TextLeft2",
+  "componentName": "SeoTextLeft2",
+  "displayName": "SEO • ข้อความซ้ายรูปขวา 2 (มีรูป)",
+  "astroFile": "SeoTextLeft2.astro",
+  "cssFile": "SeoTextLeft2.css",
+  "slot": "body",
+  "required": true,
+  "weight": 30,
+  "hasExternalLink": true,
+  "dataFile": "data/content/seo.ts",
+  "dataConst": "SEO",
+  "repeatable": true,
+  "imageRatio": "16:9",
+  "imageType": "normal",
+  "imageGroup": "seo",
+  "imageCount": 2,
+  "headingCount": 2,
+  "fields": [
+    {
+      "id": "seo-{n}",
+      "key": "heading",
+      "label": "SEO {n} — หัวข้อ",
+      "type": "heading",
+      "group": "SEO"
+    },
+    {
+      "id": "sub-seo-{n}",
+      "key": "desc",
+      "label": "SEO {n} — เนื้อหา",
+      "type": "body",
+      "group": "SEO"
+    }
+  ],
+  "images": []
+}

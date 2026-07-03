@@ -1,0 +1,17 @@
+---
+import { HERO_MASCOT } from "@/lib/images";
+import { HERO } from "@/data/content/hero";
+---
+
+<section class="hero-tm" aria-labelledby="main-seo">
+  <div class="container hero-tm-grid">
+    <div class="hero-tm-copy">
+      <span class="hero-tm-eyebrow" aria-hidden="true">เว็บตรง • สมัครง่าย • เล่นไว</span>
+      <h1 id="main-seo">{HERO.heading}</h1>
+      <p id="sub-main-seo">{HERO.description}</p>
+    </div>
+    <div class="hero-tm-art">
+      <img src={HERO_MASCOT.src} alt={HERO_MASCOT.alt} width={HERO_MASCOT.width} height={HERO_MASCOT.height} loading="eager" decoding="async" />
+    </div>
+  </div>
+</section>

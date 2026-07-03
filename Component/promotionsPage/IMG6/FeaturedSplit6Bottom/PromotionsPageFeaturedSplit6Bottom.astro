@@ -1,0 +1,61 @@
+---
+import { EXTERNAL_LINK } from "@/config/site";
+import { PROMOTIONS_PAGE } from "@/data/content/promotionsPage";
+import { getPromoPreview } from "@/lib/images";
+
+const promos = getPromoPreview(6);
+const hero = promos[0];
+const row2 = promos.slice(1, 3);
+const row3 = promos.slice(3, 6);
+---
+
+<section class="ppg-fx6b-head">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span aria-current="page">โปรโมชั่น</span></nav>
+    <h1 id="promotion-seo">{PROMOTIONS_PAGE.heading}</h1>
+    <p id="sub-promotion-seo">{PROMOTIONS_PAGE.description}</p>
+  </div>
+</section>
+
+<section class="ppg-fx6b">
+  <div class="container">
+    <div class="ppg-fx6b-row ppg-fx6b-row--3">
+      {row3.map(({ src, alt, width, height }) => (
+        <a href={EXTERNAL_LINK} class="ppg-fx6b-card" aria-label={alt}>
+          <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+        </a>
+      ))}
+    </div>
+
+    <div class="ppg-fx6b-row ppg-fx6b-row--2">
+      {row2.map(({ src, alt, width, height }) => (
+        <a href={EXTERNAL_LINK} class="ppg-fx6b-card" aria-label={alt}>
+          <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+        </a>
+      ))}
+    </div>
+
+    {hero && (
+      <a href={EXTERNAL_LINK} class="ppg-fx6b-main" aria-label={hero.alt}>
+        <img src={hero.src} alt={hero.alt} width={hero.width} height={hero.height} loading="eager" decoding="async" />
+      </a>
+    )}
+  </div>
+</section>
+
+<style>
+.ppg-fx6b-head { padding: 2rem var(--container-pad) 1rem; text-align: center; }
+.ppg-fx6b-head h1 { color: var(--color-text); font-size: var(--fz-page-title); margin: 0.75rem 0 0.5rem; }
+.ppg-fx6b-head p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); max-width: 760px; margin-inline: auto; }
+.ppg-fx6b { padding: 1rem var(--container-pad) 2.5rem; }
+.ppg-fx6b > .container { max-width: var(--container-max); margin-inline: auto; display: flex; flex-direction: column; gap: 1.5rem; }
+.ppg-fx6b-main img { width: 100%; height: auto; display: block; border-radius: var(--radius-xl); }
+.ppg-fx6b-row { display: grid; gap: 1.25rem; }
+.ppg-fx6b-row--2 { grid-template-columns: repeat(2, 1fr); }
+.ppg-fx6b-row--3 { grid-template-columns: repeat(3, 1fr); }
+.ppg-fx6b-card img { width: 100%; height: auto; display: block; border-radius: var(--radius-md); }
+@media (max-width: 768px) {
+  .ppg-fx6b-row--2,
+  .ppg-fx6b-row--3 { grid-template-columns: 1fr; }
+}
+</style>

@@ -1,0 +1,26 @@
+---
+import { getPromoPreview } from "@/lib/images";
+import { PROMOTION_SECTION } from "@/data/content/promotionSection";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+const promos = getPromoPreview(2);
+---
+
+<section class="promo-tg" aria-labelledby="promo-heading">
+  <div class="container">
+    <header class="promo-tg-head">
+      <h2 id="promo-heading">{PROMOTION_SECTION.heading}</h2>
+      <p id="sub-promo-heading">{PROMOTION_SECTION.description}</p>
+    </header>
+    <div class="promo-tg-grid">
+      {promos.map(({ alt, src, width, height }) => (
+        <a href={externalLink} class="promo-tg-card" aria-label={alt}>
+          <span class="promo-tg-inner">
+            <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+import { BANNER, hasBannerImage } from "@/lib/images";
+const hasBanner = hasBannerImage();
+---
+
+<section class="bn-rnd" aria-label="แบนเนอร์หลัก">
+  <div class="container">
+    {hasBanner && (
+      <img src={BANNER.src} alt={BANNER.alt} width={BANNER.width} height={BANNER.height} loading="eager" fetchpriority="high" decoding="async" />
+    )}
+  </div>
+</section>
+
+<style>
+.bn-rnd { padding: 1.25rem var(--container-pad); }
+.bn-rnd > .container { max-width: var(--container-max); margin-inline: auto; }
+.bn-rnd img { width: 100%; height: auto; display: block; border-radius: var(--radius-xl); }
+</style>

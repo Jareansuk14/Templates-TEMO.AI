@@ -1,0 +1,35 @@
+{
+  "kind": "Promotion",
+  "variant": "BoxSlide3",
+  "componentName": "PromotionBoxSlide3",
+  "displayName": "Promotion • กล่อง + คำอธิบาย/สไลด์ 3 (ซ้าย-ขวา)",
+  "astroFile": "PromotionBoxSlide3.astro",
+  "cssFile": "PromotionBoxSlide3.css",
+  "slot": "body",
+  "required": false,
+  "weight": 40,
+  "hasExternalLink": true,
+  "dataFile": "data/content/promotionSection.ts",
+  "dataConst": "PROMOTION_SECTION",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "promo",
+  "fields": [
+    {
+      "id": "promo-heading",
+      "key": "heading",
+      "label": "หัวข้อ Promotion",
+      "type": "heading",
+      "group": "PROMOTION SECTION"
+    },
+    {
+      "id": "sub-promo-heading",
+      "key": "description",
+      "label": "คำอธิบาย Promotion",
+      "type": "body",
+      "group": "PROMOTION SECTION"
+    }
+  ],
+  "images": []
+}

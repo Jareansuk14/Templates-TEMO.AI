@@ -1,0 +1,45 @@
+---
+import { SEO_ARTICLE_IMAGES, SEO_MASCOT } from "@/lib/images";
+import { SEO } from "@/data/content/seo";
+import { BRAND_NAME, SITE_THEME } from "@/config/site";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+
+const bullets = SEO.slice(0, 3);
+const paragraph = SEO[3];
+const bottomImage = { ...SEO_ARTICLE_IMAGES["seo-1"], id: "seo-1" };
+---
+
+<div class="seo-s4">
+  <div class="seo-s4-row">
+    <div class="seo-s4-mascot">
+      <img src={SEO_MASCOT.src} alt={SEO_MASCOT.alt} width={SEO_MASCOT.width} height={SEO_MASCOT.height} loading="lazy" decoding="async" />
+    </div>
+    <ul class="seo-s4-bullets">
+      {bullets.map(({ id, heading, desc }) => (
+        <li>
+          <div class="seo-s4-bullet" id={id}>
+            <span class="seo-s4-dot"></span>
+            <span class="seo-s4-bullet-body">
+              <span class="seo-s4-bullet-title">{heading}</span>
+              <span class="seo-s4-bullet-desc">{desc}</span>
+            </span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="seo-s4-divider"><span>{BRAND_NAME} {SITE_THEME} อันดับ 1</span></div>
+
+  <div class="seo-s4-row">
+    <article class="seo-s4-art" aria-labelledby="seo-s4-title">
+      <h2 id="seo-s4-title">{paragraph.heading}</h2>
+      <p>{paragraph.desc}</p>
+    </article>
+    <a href={externalLink} class="seo-s4-img" aria-label={bottomImage.alt}>
+      <img src={bottomImage.src} alt={bottomImage.alt} width={bottomImage.width} height={bottomImage.height} loading="lazy" decoding="async" />
+    </a>
+  </div>
+</div>

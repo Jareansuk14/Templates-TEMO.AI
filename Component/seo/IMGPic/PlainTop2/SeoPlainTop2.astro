@@ -1,0 +1,51 @@
+---
+import { SEO_ARTICLE_IMAGES } from "@/lib/images";
+import { SEO } from "@/data/content/seo";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+
+const first = SEO[0];
+const second = SEO[1];
+const heroImage = SEO_ARTICLE_IMAGES["seo-1"];
+const sideImage = SEO_ARTICLE_IMAGES["seo-2"];
+const footImage = SEO_ARTICLE_IMAGES["seo-3"];
+---
+
+<div class="seo-pt2">
+  {heroImage && (
+    <a href={externalLink} class="seo-pt2-hero" aria-label={heroImage.alt} id="seo-1">
+      <img src={heroImage.src} alt={heroImage.alt} width={heroImage.width} height={heroImage.height} loading="lazy" decoding="async" />
+    </a>
+  )}
+
+  {first && (
+    <div class="seo-pt2-row">
+      <article class="seo-pt2-copy" aria-labelledby={`${first.id}-title`}>
+        <h2 id={`${first.id}-title`}>{first.heading}</h2>
+        <p id={`sub-${first.id}`}>{first.desc}</p>
+      </article>
+      {sideImage && (
+        <a href={externalLink} class="seo-pt2-img" aria-label={sideImage.alt} id="seo-2">
+          <img src={sideImage.src} alt={sideImage.alt} width={sideImage.width} height={sideImage.height} loading="lazy" decoding="async" />
+        </a>
+      )}
+    </div>
+  )}
+
+  {(footImage || second) && (
+    <div class="seo-pt2-row">
+      {footImage && (
+        <a href={externalLink} class="seo-pt2-img" aria-label={footImage.alt} id="seo-3">
+          <img src={footImage.src} alt={footImage.alt} width={footImage.width} height={footImage.height} loading="lazy" decoding="async" />
+        </a>
+      )}
+      {second && (
+        <article class="seo-pt2-copy seo-pt2-copy--end" aria-labelledby={`${second.id}-title`}>
+          <h2 id={`${second.id}-title`}>{second.heading}</h2>
+          <p id={`sub-${second.id}`}>{second.desc}</p>
+        </article>
+      )}
+    </div>
+  )}
+</div>

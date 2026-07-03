@@ -1,0 +1,12 @@
+﻿.promo-tg { padding: var(--section-pad-y) var(--container-pad); }
+.promo-tg > .container { max-width: 940px; margin-inline: auto; }
+.promo-tg-head { text-align: center; max-width: 760px; margin: 0 auto 2.25rem; }
+.promo-tg-head h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); margin-bottom: 0.6rem; }
+.promo-tg-head p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }
+.promo-tg-grid { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+.promo-tg-card { flex: 1 1 320px; max-width: 420px; display: block; padding: 5px; border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--color-accent), var(--color-primary)); transform: rotate(-2.5deg); transition: transform 0.25s ease; }
+.promo-tg-card:nth-child(even) { transform: rotate(2.5deg); }
+.promo-tg-card:hover { transform: rotate(0) translateY(-4px); }
+.promo-tg-inner { display: block; border-radius: calc(var(--radius-lg) - 3px); overflow: hidden; background: var(--color-bg); }
+.promo-tg-inner img { width: 100%; height: auto; display: block; }
+@media (max-width: 600px) { .promo-tg-card, .promo-tg-card:nth-child(even) { transform: none; } }

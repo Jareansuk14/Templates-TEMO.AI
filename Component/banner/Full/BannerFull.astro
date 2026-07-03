@@ -1,0 +1,15 @@
+---
+import { BANNER, hasBannerImage } from "@/lib/images";
+const hasBanner = hasBannerImage();
+---
+
+<section class="bn-full" aria-label="Banner">
+  {hasBanner && (
+    <img src={BANNER.src} alt={BANNER.alt} width={BANNER.width} height={BANNER.height} loading="eager" fetchpriority="high" decoding="async" />
+  )}
+</section>
+
+<style>
+.bn-full { display: block; }
+.bn-full img { width: 100%; height: auto; display: block; }
+</style>

@@ -1,0 +1,42 @@
+{
+  "kind": "Cta",
+  "variant": "TransparentMascot",
+  "componentName": "CtaTransparentMascot",
+  "displayName": "CTA • ข้อความ/ปุ่มซ้าย + มาสคอตโปร่งใส",
+  "astroFile": "CtaTransparentMascot.astro",
+  "cssFile": "CtaTransparentMascot.css",
+  "slot": "body",
+  "required": false,
+  "weight": 51,
+  "hasExternalLink": true,
+  "dataFile": "data/content/cta.ts",
+  "dataConst": "CTA",
+  "repeatable": false,
+  "imageRatio": "1:1",
+  "imageType": "transparent",
+  "imageGroup": "ctaMascot",
+  "fields": [
+    {
+      "id": "cta-seo",
+      "key": "heading",
+      "label": "หัวข้อ CTA",
+      "type": "heading",
+      "group": "CTA"
+    },
+    {
+      "id": "sub-cta-seo",
+      "key": "description",
+      "label": "คำอธิบาย CTA",
+      "type": "body",
+      "group": "CTA"
+    }
+  ],
+  "images": [
+    {
+      "id": "ctaMascot",
+      "role": "transparent CTA character mascot",
+      "ratio": "1:1",
+      "required": true
+    }
+  ]
+}

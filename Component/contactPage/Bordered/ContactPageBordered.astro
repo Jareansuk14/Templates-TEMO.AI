@@ -1,0 +1,42 @@
+---
+import { LINE } from "@/config/site";
+import { CONTACT_PAGE } from "@/data/content/contactPage";
+import { LINE_QR } from "@/lib/images";
+const lineUrl = `https://line.me/ti/p/~${LINE.id}`;
+---
+
+<section class="cp-bd-head">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span aria-current="page">ติดต่อเรา</span></nav>
+    <h1 id="contact-seo">{CONTACT_PAGE.heading}</h1>
+    <p id="sub-contact-seo">{CONTACT_PAGE.description}</p>
+  </div>
+</section>
+
+<section class="cp-bd-sec" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="cp-bd-frame">
+      <div class="cp-bd-inner">
+        <h2 id="contact-heading">แอดไลน์ติดต่อเราได้เลย</h2>
+        <p>ทีมงานพร้อมตอบคุณตลอด 24 ชั่วโมง</p>
+        <div class="cp-bd-qr"><img src={LINE_QR.src} alt={`QR Code LINE ${LINE.id}`} width={LINE_QR.width} height={LINE_QR.height} loading="lazy" decoding="async" /></div>
+        <a href={lineUrl} class="cp-bd-id">{LINE.id}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.cp-bd-head { padding: 2rem var(--container-pad) 1rem; text-align: center; }
+.cp-bd-head h1 { color: var(--color-text); font-size: var(--fz-page-title); margin: 0.75rem 0 0.5rem; }
+.cp-bd-head p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); max-width: 640px; margin-inline: auto; }
+.cp-bd-sec { padding: 1rem var(--container-pad) 3.5rem; }
+.cp-bd-sec > .container { max-width: 540px; margin-inline: auto; }
+.cp-bd-frame { padding: 4px; border-radius: var(--radius-xl); background: linear-gradient(135deg, var(--color-accent), var(--color-primary)); }
+.cp-bd-inner { text-align: center; background: var(--color-bg); border-radius: calc(var(--radius-xl) - 2px); padding: 2.5rem 2rem; }
+.cp-bd-inner h2 { color: var(--color-text); font-size: var(--fz-card-title); margin: 0 0 0.5rem; }
+.cp-bd-inner p { color: var(--color-text-muted); margin: 0 0 1.5rem; }
+.cp-bd-qr { display: inline-block; background: #fff; padding: 12px; border-radius: var(--radius-lg); }
+.cp-bd-qr img { width: 190px; height: auto; display: block; }
+.cp-bd-id { display: block; margin-top: 1.25rem; color: var(--color-primary); font-weight: 800; font-size: var(--fz-card-title); }
+</style>

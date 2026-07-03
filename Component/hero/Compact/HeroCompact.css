@@ -1,0 +1,8 @@
+﻿.hero-compact { padding: var(--section-pad-y) var(--container-pad); }
+.hero-compact-row { display: flex; gap: 1.5rem; align-items: center; justify-content: space-between; max-width: var(--container-max); margin-inline: auto; flex-wrap: wrap; }
+.hero-compact-text { flex: 1; min-width: 280px; text-align: left; }
+.hero-compact h1 { font-size: var(--fz-page-title); color: var(--color-text); margin-bottom: 0.6rem; line-height: 1.3; }
+.hero-compact p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }
+.hero-compact-btn { flex: 0 0 auto; max-width: 280px; display: block; }
+.hero-compact-btn img { width: 100%; border-radius: var(--radius-md); display: block; }
+@media (max-width: 768px) { .hero-compact-btn { max-width: 100%; width: 100%; } }

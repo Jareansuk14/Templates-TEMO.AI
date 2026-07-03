@@ -1,0 +1,40 @@
+---
+import { FAQ as faqs } from "@/data/content/faq";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+<section class="faqv-plain" aria-labelledby="faq-global-heading">
+  <div class="container">
+    <h2 id="faq-global-heading">คำถามที่พบบ่อย</h2>
+    <dl class="faqv-plain-list">
+      {faqs.map(({ q, a }, i) => (
+        <div class="faqv-plain-item">
+          <dt id={`faq-q-${i + 1}`}>{q}</dt>
+          <dd id={`faq-a-${i + 1}`}>{a}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<style>
+.faqv-plain { padding: 2.5rem var(--container-pad); }
+.faqv-plain > .container { max-width: 800px; margin-inline: auto; }
+.faqv-plain h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); text-align: center; margin-bottom: 1.75rem; }
+.faqv-plain-list { margin: 0; }
+.faqv-plain-item { padding: 1.25rem 0; border-bottom: 1px solid var(--color-border-subtle); }
+.faqv-plain-item:last-child { border-bottom: 0; }
+.faqv-plain-item dt { color: var(--color-text); font-weight: 700; margin-bottom: 0.5rem; }
+.faqv-plain-item dd { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }
+</style>

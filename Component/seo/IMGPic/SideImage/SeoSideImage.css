@@ -1,0 +1,8 @@
+﻿.seo-side { padding: var(--section-pad-y) var(--container-pad); }
+.seo-side > .container { max-width: var(--container-max); margin-inline: auto; display: flex; flex-direction: column; gap: 1.75rem; }
+.seo-side-row { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 1.5rem; align-items: center; }
+.seo-side-img { display: block; }
+.seo-side-img img { width: 100%; height: auto; display: block; border-radius: var(--radius-md); }
+.seo-side-box h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); margin-bottom: 0.6rem; }
+.seo-side-box p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }
+@media (max-width: 768px) { .seo-side-row { grid-template-columns: 1fr; } }

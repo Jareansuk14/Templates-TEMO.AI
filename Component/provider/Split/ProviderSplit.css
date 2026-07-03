@@ -1,0 +1,6 @@
+﻿.prov-sp { padding: var(--section-pad-y) var(--container-pad); }
+.prov-sp-grid { max-width: var(--container-max); margin-inline: auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 2rem; align-items: center; }
+.prov-sp-text h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); margin-bottom: 0.75rem; }
+.prov-sp-text p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }
+.prov-sp-img img { width: 100%; height: auto; display: block; }
+@media (max-width: 768px) { .prov-sp-grid { grid-template-columns: 1fr; } }

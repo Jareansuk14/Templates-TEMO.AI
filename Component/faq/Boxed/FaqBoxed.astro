@@ -1,0 +1,43 @@
+---
+import { FAQ as faqs } from "@/data/content/faq";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+<section class="faqv-box" aria-labelledby="faq-global-heading">
+  <div class="container">
+    <div class="faqv-box-card">
+      <h2 id="faq-global-heading">คำถามที่พบบ่อย</h2>
+      <div class="faqv-box-list">
+        {faqs.map(({ q, a }, i) => (
+          <details class="faqv-box-item">
+            <summary id={`faq-q-${i + 1}`}>{q}</summary>
+            <p id={`faq-a-${i + 1}`}>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.faqv-box { padding: 2.5rem var(--container-pad); }
+.faqv-box > .container { max-width: 880px; margin-inline: auto; }
+.faqv-box-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: var(--glass-border); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--glow-sm); }
+.faqv-box-card h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); text-align: center; margin-bottom: 1.5rem; }
+.faqv-box-list { display: flex; flex-direction: column; }
+.faqv-box-item { border-bottom: 1px solid var(--color-border-subtle); padding: 0.85rem 0; }
+.faqv-box-item:last-child { border-bottom: 0; }
+.faqv-box-item summary { cursor: pointer; color: var(--color-text); font-weight: 600; }
+.faqv-box-item p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0.75rem 0 0.25rem; }
+</style>

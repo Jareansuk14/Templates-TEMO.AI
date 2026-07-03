@@ -1,0 +1,8 @@
+﻿.cta2 { padding: var(--section-pad-y) var(--container-pad); text-align: center; }
+.cta2 > .container { max-width: 720px; margin-inline: auto; }
+.cta2 h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); margin-bottom: 0.75rem; }
+.cta2 p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin-bottom: 1.5rem; }
+.cta2-actions { display: flex; gap: 1rem; justify-content: center; }
+.cta2-actions a { flex: 1; min-width: 0; }
+.cta2-actions img { width: 100%; max-height: 110px; object-fit: contain; border-radius: var(--radius-md); display: block; }
+@media (max-width: 480px) { .cta2-actions img { max-height: 56px; } }

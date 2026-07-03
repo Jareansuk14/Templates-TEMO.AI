@@ -1,0 +1,24 @@
+{
+  "kind": "Header",
+  "variant": "ClassicRound",
+  "componentName": "HeaderClassicRound",
+  "displayName": "Header • คลาสสิก มุมมน",
+  "astroFile": "HeaderClassicRound.astro",
+  "slot": "header",
+  "required": true,
+  "weight": 5,
+  "hasExternalLink": false,
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [],
+  "images": [
+    {
+      "id": "logo",
+      "role": "logo",
+      "ratio": "1:1",
+      "required": false
+    }
+  ]
+}

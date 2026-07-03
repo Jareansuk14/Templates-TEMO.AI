@@ -1,0 +1,21 @@
+---
+import { getPromoPreview } from "@/lib/images";
+import { PROMOTION_SECTION } from "@/data/content/promotionSection";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+const [promo] = getPromoPreview(1);
+---
+
+<section class="promo-simple" aria-labelledby="promo-heading">
+  <div class="container">
+    <h2 id="promo-heading">{PROMOTION_SECTION.heading}</h2>
+    <p id="sub-promo-heading">{PROMOTION_SECTION.description}</p>
+    {promo && (
+      <a href={externalLink} class="promo-simple-img" aria-label={promo.alt}>
+        <img src={promo.src} alt={promo.alt} width={promo.width} height={promo.height} loading="lazy" decoding="async" />
+      </a>
+    )}
+    <a href="/promotions/" class="btn btn-outline-gold">ดูโปรโมชั่นทั้งหมด →</a>
+  </div>
+</section>

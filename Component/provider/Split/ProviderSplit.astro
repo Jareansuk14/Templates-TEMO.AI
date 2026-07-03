@@ -1,0 +1,15 @@
+---
+import { PROVIDER } from "@/lib/images";
+---
+
+<section class="prov-sp" aria-labelledby="providers-heading">
+  <div class="container prov-sp-grid">
+    <div class="prov-sp-text">
+      <h2 id="providers-heading">ค่ายเกมชั้นนำที่ให้บริการ</h2>
+      <p>คัดสรรค่ายเกมคุณภาพระดับสากล ภาพคมชัด เล่นได้ทุกอุปกรณ์ พร้อมอัปเดตเกมใหม่ต่อเนื่อง</p>
+    </div>
+    <div class="prov-sp-img">
+      <img src={PROVIDER.src} alt={PROVIDER.alt} width={PROVIDER.width} height={PROVIDER.height} loading="lazy" decoding="async" />
+    </div>
+  </div>
+</section>

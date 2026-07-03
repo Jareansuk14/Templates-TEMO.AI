@@ -1,0 +1,19 @@
+---
+import { SEO } from "@/data/content/seo";
+---
+
+<section class="seo-tl" aria-label="ข้อมูลเด่น">
+  <div class="container">
+    <ol class="seo-tl-list">
+      {SEO.map(({ id, heading, desc }) => (
+        <li class="seo-tl-item" aria-labelledby={`${id}-title`}>
+          <span class="seo-tl-dot" aria-hidden="true"></span>
+          <div class="seo-tl-body">
+            <h2 id={`${id}-title`}>{heading}</h2>
+            <p id={`sub-${id}`}>{desc}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

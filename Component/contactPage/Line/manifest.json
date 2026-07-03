@@ -1,0 +1,35 @@
+{
+  "kind": "ContactPage",
+  "variant": "Line",
+  "componentName": "ContactPageLine",
+  "displayName": "หน้าติดต่อ • LINE",
+  "astroFile": "ContactPageLine.astro",
+  "cssFile": "ContactPageLine.css",
+  "slot": "page:contact",
+  "required": true,
+  "weight": 800,
+  "hasExternalLink": false,
+  "dataFile": "data/content/contactPage.ts",
+  "dataConst": "CONTACT_PAGE",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [
+    {
+      "id": "contact-seo",
+      "key": "heading",
+      "label": "หัวข้อหน้าติดต่อ (H1)",
+      "type": "heading",
+      "group": "CONTACT"
+    },
+    {
+      "id": "sub-contact-seo",
+      "key": "description",
+      "label": "คำอธิบายหน้าติดต่อ",
+      "type": "body",
+      "group": "CONTACT"
+    }
+  ],
+  "images": []
+}

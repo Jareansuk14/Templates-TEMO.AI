@@ -1,18 +1,18 @@
-﻿---
+---
 import { ACTION_BUTTONS } from "@/lib/images";
+import { CTA } from "@/data/content/cta";
 
 interface Props { externalLink: string; }
 const { externalLink } = Astro.props;
-
-const register = ACTION_BUTTONS.register;
+const { register } = ACTION_BUTTONS;
 ---
 
-<section class="hero-below cta-section" aria-labelledby="cta-seo">
-  <div class="container">
-    <h2 id="cta-seo">เริ่มเล่นสล็อตเว็บตรง TEMO888 สมัครง่าย เล่นได้ทันที</h2>
-    <p class="hero-desc cta-desc" id="sub-cta-seo">สมัคร TEMO888 แล้วเข้าสู่หน้าเกมสล็อตได้ผ่านมือถือโดยไม่ต้องติดตั้งแอป เมนูสมัคร ฝากถอนออโต้ และเลือกค่ายเกมถูกจัดไว้เป็นขั้นตอน มือใหม่จึงเริ่มจากเกมเดิมพันต่ำ ทดลองดูจังหวะโบนัส ตารางจ่าย และฟรีสปินก่อนเพิ่มทุน ช่วยให้เล่นสล็อตเว็บตรงได้สนุกแบบไม่กดดัน</p>
-    <div class="hero-action-pair hero-action-single">
-      <a href={externalLink} class="hero-action-link" aria-label={register.alt}>
+<section class="cta-left" aria-labelledby="cta-seo">
+  <div class="container cta-left-inner">
+    <h2 id="cta-seo">{CTA.heading}</h2>
+    <p id="sub-cta-seo">{CTA.description}</p>
+    <div class="cta-left-action">
+      <a href={externalLink} aria-label={register.alt}>
         <img src={register.src} alt={register.alt} width={register.width} height={register.height} loading="lazy" decoding="async" />
       </a>
     </div>

@@ -1,0 +1,43 @@
+{
+  "kind": "Seo",
+  "variant": "RowsFlat3",
+  "componentName": "SeoRowsFlat3",
+  "displayName": "SEO â€¢ à¸ªà¸¥à¸±à¸šà¸‹à¹‰à¸²à¸¢à¸‚à¸§à¸² 3 à¹à¸šà¸šà¹€à¸£à¸µà¸¢à¸š (à¸¡à¸µà¸£à¸¹à¸›)",
+  "astroFile": "SeoRowsFlat3.astro",
+  "cssFile": "SeoRowsFlat3.css",
+  "slot": "body",
+  "required": true,
+  "weight": 30,
+  "hasExternalLink": true,
+  "dataFile": "data/content/seo.ts",
+  "dataConst": "SEO",
+  "repeatable": true,
+  "imageRatio": "16:9",
+  "imageType": "normal",
+  "imageGroup": "seo",
+  "imageCount": 3,
+  "headingCount": 3,
+  "fields": [
+    {
+      "id": "seo-{n}",
+      "key": "heading",
+      "label": "SEO {n} â€” à¸«à¸±à¸§à¸‚à¹‰à¸­",
+      "type": "heading",
+      "group": "SEO"
+    },
+    {
+      "id": "sub-seo-{n}",
+      "key": "desc",
+      "label": "SEO {n} â€” à¹€à¸™à¸·à¹‰à¸­à¸«à¸²",
+      "type": "body",
+      "group": "SEO"
+    }
+  ],
+  "images": [
+    {
+      "id": "play",
+      "role": "play button",
+      "required": true
+    }
+  ]
+}

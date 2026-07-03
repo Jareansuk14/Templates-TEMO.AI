@@ -1,0 +1,66 @@
+---
+import { EXTERNAL_LINK, NAV_LINKS, isActivePath, BRAND_NAME } from "@/config/site";
+import { getLogoSrc, LOGO } from "@/lib/images";
+
+const currentPath = Astro.url.pathname;
+const logoSrc = getLogoSrc();
+---
+
+<header class="site-header hdr-navright" role="banner">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="site-logo" aria-label="กลับหน้าแรก">
+        <img src={logoSrc} alt={`${BRAND_NAME} Logo`} width={LOGO.width} height={LOGO.height} loading="eager" fetchpriority="high" decoding="async" />
+      </a>
+      <nav class="main-nav" aria-label="เมนูหลัก">
+        <ul role="list">
+          {NAV_LINKS.map(({ href, label }) => (
+            <li><a href={href} aria-current={isActivePath(currentPath, href) ? "page" : undefined}>{label}</a></li>
+          ))}
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href={EXTERNAL_LINK} class="btn btn-outline-gold btn-sm">เข้าสู่ระบบ</a>
+        <a href={EXTERNAL_LINK} class="btn btn-gold btn-sm">สมัครสมาชิก</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="เปิดเมนู"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="mobile-menu" hidden>
+    <nav aria-label="เมนูมือถือ">
+      <ul role="list">
+        {NAV_LINKS.map(({ href, label }) => (
+          <li><a href={href} aria-current={isActivePath(currentPath, href) ? "page" : undefined}>{label}</a></li>
+        ))}
+        <li style="display:flex;gap:.5rem;padding:.5rem 1rem">
+          <a href={EXTERNAL_LINK} class="btn btn-outline-gold btn-sm" style="flex:1">เข้าสู่ระบบ</a>
+          <a href={EXTERNAL_LINK} class="btn btn-gold btn-sm" style="flex:1">สมัครสมาชิก</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const t = document.querySelector(".nav-toggle");
+  const m = document.getElementById("mobile-menu");
+  t?.addEventListener("click", () => {
+    const e = t.getAttribute("aria-expanded") === "true";
+    t.setAttribute("aria-expanded", String(!e));
+    if (m) (m as HTMLElement).hidden = e;
+  });
+</script>
+
+<style>
+.hdr-navright { top: 0.85rem; background: transparent; backdrop-filter: none; box-shadow: none; }
+.hdr-navright .header-inner { margin-block: 0.85rem; padding: 0.45rem 1.5rem; background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: var(--glass-border); border-radius: 999px; box-shadow: var(--glow-md); }
+.hdr-navright .site-logo img { height: 64px; }
+.hdr-navright .header-actions { margin-left: 1rem; }
+.hdr-navright .main-nav a,
+.hdr-navright .header-actions .btn { border-radius: 999px; }
+@media (max-width: 768px) {
+  .hdr-navright { top: 0.5rem; }
+  .hdr-navright .header-inner { margin-block: 0.5rem; padding-inline: 1rem; }
+  .hdr-navright .site-logo img { height: 64px; }
+}
+</style>

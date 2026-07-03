@@ -1,0 +1,35 @@
+{
+  "kind": "Promotion",
+  "variant": "StackBottom2",
+  "componentName": "PromotionStackBottom2",
+  "displayName": "Promotion • รูปเล็ก 2 บน + รูปใหญ่ล่าง",
+  "astroFile": "PromotionStackBottom2.astro",
+  "cssFile": "PromotionStackBottom2.css",
+  "slot": "body",
+  "required": false,
+  "weight": 40,
+  "hasExternalLink": true,
+  "dataFile": "data/content/promotionSection.ts",
+  "dataConst": "PROMOTION_SECTION",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "promo",
+  "fields": [
+    {
+      "id": "promo-heading",
+      "key": "heading",
+      "label": "หัวข้อ Promotion",
+      "type": "heading",
+      "group": "PROMOTION SECTION"
+    },
+    {
+      "id": "sub-promo-heading",
+      "key": "description",
+      "label": "คำอธิบาย Promotion",
+      "type": "body",
+      "group": "PROMOTION SECTION"
+    }
+  ],
+  "images": []
+}

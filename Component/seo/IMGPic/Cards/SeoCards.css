@@ -1,0 +1,8 @@
+﻿.seo-cards { padding: var(--section-pad-y) var(--container-pad); }
+.seo-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: var(--container-max); margin-inline: auto; }
+.seo-card { background: var(--glass-bg); border: var(--glass-border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
+.seo-card-img { display: block; }
+.seo-card-img img { width: 100%; height: auto; display: block; }
+.seo-card-body { padding: 1.25rem; }
+.seo-card h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); margin-bottom: 0.6rem; }
+.seo-card p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }

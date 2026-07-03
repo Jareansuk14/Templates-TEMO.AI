@@ -1,0 +1,24 @@
+{
+  "kind": "Banner",
+  "variant": "Full",
+  "componentName": "BannerFull",
+  "displayName": "Banner • เต็มกว้าง",
+  "astroFile": "BannerFull.astro",
+  "slot": "banner",
+  "required": true,
+  "weight": 8,
+  "hasExternalLink": false,
+  "repeatable": false,
+  "imageRatio": "auto",
+  "imageType": "normal",
+  "imageGroup": "banner",
+  "fields": [],
+  "images": [
+    {
+      "id": "banner",
+      "role": "banner",
+      "ratio": "auto",
+      "required": true
+    }
+  ]
+}

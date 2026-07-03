@@ -1,0 +1,5 @@
+﻿.prov-grad { padding: var(--section-pad-y) var(--container-pad); }
+.prov-grad-panel { max-width: var(--container-max); margin-inline: auto; border-radius: var(--radius-xl); padding: 2.5rem 2rem; background: linear-gradient(135deg, var(--color-bg-3), var(--color-bg-2)); border: 1px solid var(--color-border-subtle); text-align: center; }
+.prov-grad-head { margin-bottom: 1.5rem; }
+.prov-grad-head h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); }
+.prov-grad-panel img { width: 100%; height: auto; display: block; }

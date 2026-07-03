@@ -1,12 +1,13 @@
-﻿---
-import { getPromoPreview, PROMO_PREVIEW_SIZE } from "@/lib/images";
+---
+import { PROMOS, PROMO_PREVIEW_SIZE } from "@/lib/images";
+import { PROMOTION_SECTION } from "@/data/content/promotionSection";
 
 interface Props {
   externalLink: string;
 }
 const { externalLink } = Astro.props;
 
-const promos = getPromoPreview(3);
+const promos = PROMOS;
 const { width: previewWidth, height: previewHeight } = PROMO_PREVIEW_SIZE;
 ---
 
@@ -14,10 +15,10 @@ const { width: previewWidth, height: previewHeight } = PROMO_PREVIEW_SIZE;
 <section class="section section-alt section-intro" aria-labelledby="promo-heading">
   <div class="container">
     <header class="section-header">
-      <h2 id="promo-heading">โปรสล็อต TEMO888 เติมทุนคุ้มกว่า ลุ้นฟรีสปินมากขึ้น</h2>
+      <h2 id="promo-heading">{PROMOTION_SECTION.heading}</h2>
       <div class="gold-line"></div>
     </header>
-    <p class="section-desc">โปรโมชั่นสล็อตของ TEMO888 เหมาะกับผู้เล่นที่อยากเพิ่มรอบหมุนโดยไม่เร่งใช้ทุนเกินแผน มีทั้งโบนัสตามเงื่อนไข กิจกรรมคืนยอด และสิทธิ์พิเศษในช่วงเวลา ก่อนรับโปรควรอ่านยอดฝากขั้นต่ำ เทิร์นโอเวอร์ และค่ายเกมที่ร่วมรายการ เพื่อใช้เครดิตฟรีหรือโบนัสกับสล็อตแตกง่ายได้คุ้มจริง</p>
+    <p class="section-desc">{PROMOTION_SECTION.description}</p>
 
     <div class="promo-carousel" aria-label="สไลด์โปรโมชั่น" role="region">
       <div class="promo-carousel-track" id="promo-track">

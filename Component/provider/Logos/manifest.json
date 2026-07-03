@@ -5,5 +5,21 @@
   "displayName": "ค่ายเกม",
   "astroFile": "ProviderLogos.astro",
   "cssFile": "ProviderLogos.css",
-  "hasExternalLink": false
+  "slot": "body",
+  "required": false,
+  "weight": 60,
+  "hasExternalLink": false,
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [],
+  "images": [
+    {
+      "id": "provider",
+      "role": "provider",
+      "ratio": "auto",
+      "required": false
+    }
+  ]
 }

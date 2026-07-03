@@ -1,0 +1,48 @@
+---
+import { LINE } from "@/config/site";
+import { CONTACT_PAGE } from "@/data/content/contactPage";
+import { LINE_QR } from "@/lib/images";
+const lineUrl = `https://line.me/ti/p/~${LINE.id}`;
+---
+
+<section class="cp-tk-head">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span aria-current="page">ติดต่อเรา</span></nav>
+    <h1 id="contact-seo">{CONTACT_PAGE.heading}</h1>
+    <p id="sub-contact-seo">{CONTACT_PAGE.description}</p>
+  </div>
+</section>
+
+<section class="cp-tk-sec" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="cp-tk">
+      <div class="cp-tk-left">
+        <span class="cp-tk-eyebrow" aria-hidden="true">คูปองพิเศษ</span>
+        <h2 id="contact-heading">แอดไลน์รับโบนัสทันที</h2>
+        <p>ทีมงานพร้อมตอบคุณตลอด 24 ชั่วโมง</p>
+        <a href={lineUrl} class="cp-tk-btn">เพิ่มเพื่อน {LINE.id}</a>
+      </div>
+      <div class="cp-tk-right">
+        <img src={LINE_QR.src} alt={`QR Code LINE ${LINE.id}`} width={LINE_QR.width} height={LINE_QR.height} loading="lazy" decoding="async" />
+        <span>สแกนเพื่อแอด</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.cp-tk-head { padding: 2.5rem var(--container-pad) 0.5rem; text-align: center; }
+.cp-tk-head h1 { color: var(--color-text); font-size: var(--fz-page-title); margin: 0.75rem 0 0.5rem; }
+.cp-tk-head p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); max-width: 640px; margin-inline: auto; }
+.cp-tk-sec { padding: 1.5rem var(--container-pad) 3.5rem; }
+.cp-tk { max-width: 760px; margin-inline: auto; display: grid; grid-template-columns: 1.3fr 1fr; background: var(--color-bg-2); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); overflow: hidden; }
+.cp-tk-left { padding: 2.5rem 2rem; }
+.cp-tk-eyebrow { display: inline-block; letter-spacing: 0.16em; text-transform: uppercase; font-size: var(--fz-eyebrow); font-weight: 700; color: var(--color-accent); margin-bottom: 0.6rem; }
+.cp-tk-left h2 { color: var(--color-text); font-size: var(--fz-card-title); margin: 0 0 0.5rem; }
+.cp-tk-left p { color: var(--color-text-muted); margin: 0 0 1.5rem; }
+.cp-tk-btn { display: inline-block; background: var(--color-primary); color: var(--color-on-primary); font-weight: 700; padding: 0.75rem 1.7rem; border-radius: var(--radius-pill); }
+.cp-tk-right { padding: 2rem; text-align: center; border-left: 2px dashed var(--color-border); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; }
+.cp-tk-right img { width: 160px; max-width: 100%; height: auto; background: #fff; padding: 8px; border-radius: var(--radius-md); }
+.cp-tk-right span { color: var(--color-text-muted); font-size: var(--fz-body); }
+@media (max-width: 600px) { .cp-tk { grid-template-columns: 1fr; } .cp-tk-right { border-left: 0; border-top: 2px dashed var(--color-border); } }
+</style>

@@ -1,0 +1,25 @@
+{
+  "kind": "Provider",
+  "variant": "Gradient",
+  "componentName": "ProviderGradient",
+  "displayName": "ค่ายเกม • พาเนลไล่สี",
+  "astroFile": "ProviderGradient.astro",
+  "cssFile": "ProviderGradient.css",
+  "slot": "body",
+  "required": false,
+  "weight": 60,
+  "hasExternalLink": false,
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [],
+  "images": [
+    {
+      "id": "provider",
+      "role": "provider",
+      "ratio": "auto",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+---
+import { EXTERNAL_LINK } from "@/config/site";
+import { PROMOTIONS_PAGE } from "@/data/content/promotionsPage";
+import { getPromoPreview } from "@/lib/images";
+
+const [hero, ...rest] = getPromoPreview(4);
+---
+
+<section class="ppg-ftb-head">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span aria-current="page">โปรโมชั่น</span></nav>
+    <h1 id="promotion-seo">{PROMOTIONS_PAGE.heading}</h1>
+    <p id="sub-promotion-seo">{PROMOTIONS_PAGE.description}</p>
+  </div>
+</section>
+
+<section class="ppg-ftb">
+  <div class="container">
+    <div class="ppg-ftb-rest">
+      {rest.map(({ src, alt, width, height }) => (
+        <a href={EXTERNAL_LINK} class="ppg-ftb-card" aria-label={alt}>
+          <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+        </a>
+      ))}
+    </div>
+    {hero && (
+      <a href={EXTERNAL_LINK} class="ppg-ftb-main" aria-label={hero.alt}>
+        <img src={hero.src} alt={hero.alt} width={hero.width} height={hero.height} loading="eager" decoding="async" />
+      </a>
+    )}
+  </div>
+</section>
+
+<style>
+.ppg-ftb-head { padding: 2rem var(--container-pad) 1rem; text-align: center; }
+.ppg-ftb-head h1 { color: var(--color-text); font-size: var(--fz-page-title); margin: 0.75rem 0 0.5rem; }
+.ppg-ftb-head p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); max-width: 760px; margin-inline: auto; }
+.ppg-ftb { padding: 1rem var(--container-pad) 2.5rem; }
+.ppg-ftb > .container { max-width: var(--container-max); margin-inline: auto; display: flex; flex-direction: column; gap: 1.5rem; }
+.ppg-ftb-main img { width: 100%; height: auto; display: block; border-radius: var(--radius-xl); }
+.ppg-ftb-rest { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.ppg-ftb-card img { width: 100%; height: auto; display: block; border-radius: var(--radius-md); }
+@media (max-width: 768px) { .ppg-ftb-rest { grid-template-columns: 1fr; } }
+</style>

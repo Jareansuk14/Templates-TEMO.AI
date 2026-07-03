@@ -19,6 +19,8 @@ export type SeoArticleImage = {
 /** พื้นหลังทั้งเว็บ (public root) */
 export const BACKGROUND = {
   src: "/images/BG.webp",
+  width: 1920,
+  height: 1080,
 } as const;
 
 const IMAGE_MIME_BY_EXT: Record<string, string> = {
@@ -35,47 +37,76 @@ const IMAGE_MIME_BY_EXT: Record<string, string> = {
 export const BANNER = {
   src: "/images/banner.webp",
   alt: "คำอธิบาย",
-  width: 1536,
-  height: 728,
+  width: 1600,
+  height: 900,
+} as const;
+
+export const HERO_MASCOT: SiteImage = {
+  src: "/images/hero-mascot.webp",
+  alt: "คำอธิบาย",
+  width: 1024,
+  height: 1024,
+};
+
+export const CTA_MASCOT: SiteImage = {
+  src: "/images/cta-mascot.webp",
+  alt: "คำอธิบาย",
+  width: 1024,
+  height: 1024,
+};
+
+/** SEO Mascot (ตัวละครโปร่งใส) */
+export const SEO_MASCOT: SiteImage = {
+  src: "/images/seo-mascot.webp",
+  alt: "คำอธิบาย",
+  width: 1024,
+  height: 1024,
+};
+
+/** ปุ่ม Play */
+export const PLAY_BUTTON = {
+  src: "/images/play.webp",
+  width: 512,
+  height: 240,
 } as const;
 
 /** Header logo */
 export const LOGO = {
   src: "/images/logo.webp",
-  width: 128,
-  height: 128,
+  width: 512,
+  height: 512,
 } as const;
 
 /** ปุ่ม Hero / CTA */
 export const ACTION_BUTTONS = {
   login: {
-    src: "/images/เข้าสู่ระบบ.webp",
+    src: "/images/login.webp",
     alt: "เข้าสู่ระบบ",
-    width: 1867,
-    height: 576,
+    width: 512,
+    height: 240,
   },
   register: {
-    src: "/images/สมัครสมาชิก.webp",
+    src: "/images/register.webp",
     alt: "สมัครสมาชิก",
-    width: 1867,
-    height: 576,
+    width: 512,
+    height: 240,
   },
   contact: {
-    src: "/images/ติดต่อเรา.webp",
+    src: "/images/contact.webp",
     alt: "ติดต่อเรา",
-    width: 1867,
-    height: 576,
+    width: 512,
+    height: 240,
   },
 } as const satisfies Record<string, SiteImage>;
 
 /** เกม 6 ประเภท */
 export const GAME_CARDS: SiteImage[] = [
-  { alt: "คำอธิบาย", src: "/images/game1.webp", width: 1200, height: 801, },
-  { alt: "คำอธิบาย", src: "/images/game2.webp", width: 1200, height: 801, },
-  { alt: "คำอธิบาย", src: "/images/game3.webp", width: 1200, height: 801, },
-  { alt: "คำอธิบาย", src: "/images/game4.webp", width: 1200, height: 801, },
-  { alt: "คำอธิบาย", src: "/images/game5.webp", width: 1200, height: 801, },
-  { alt: "คำอธิบาย", src: "/images/game6.webp", width: 1200, height: 801 },
+  { alt: "คำอธิบาย", src: "/images/game1.webp", width: 240, height: 512, },
+  { alt: "คำอธิบาย", src: "/images/game2.webp", width: 240, height: 512, },
+  { alt: "คำอธิบาย", src: "/images/game3.webp", width: 240, height: 512, },
+  { alt: "คำอธิบาย", src: "/images/game4.webp", width: 240, height: 512, },
+  { alt: "คำอธิบาย", src: "/images/game5.webp", width: 240, height: 512, },
+  { alt: "คำอธิบาย", src: "/images/game6.webp", width: 240, height: 512 },
 ];
 
 /** ค่ายเกม */
@@ -88,17 +119,17 @@ export const PROVIDER: SiteImage = {
 
 /** โปรโมชั่น (หน้า promotions + preview หน้าแรก) */
 export const PROMOS: PromoImage[] = [
-  { src: "/images/promo1.webp", alt: "[ชื่อโปรโมชั่น 1 — เช่น: โบนัสต้อนรับ 100%]", width: 800, height: 500 },
-  { src: "/images/promo2.webp", alt: "[ชื่อโปรโมชั่น 2 — เช่น: โบนัสรายวัน 20%]", width: 800, height: 500 },
-  { src: "/images/promo3.webp", alt: "[ชื่อโปรโมชั่น 3 — เช่น: คืนยอดเสีย 5%]", width: 800, height: 500 },
-  { src: "/images/promo4.webp", alt: "[ชื่อโปรโมชั่น 4 — เช่น: แนะนำเพื่อน รับ X%]", width: 800, height: 500 },
+  { src: "/images/promo1.webp", alt: "[ชื่อโปรโมชั่น 1 — เช่น: โบนัสต้อนรับ 100%]", width: 1600, height: 900 },
+  { src: "/images/promo2.webp", alt: "[ชื่อโปรโมชั่น 2 — เช่น: โบนัสรายวัน 20%]", width: 1600, height: 900 },
+  { src: "/images/promo3.webp", alt: "[ชื่อโปรโมชั่น 3 — เช่น: คืนยอดเสีย 5%]", width: 1600, height: 900 },
+  { src: "/images/promo4.webp", alt: "[ชื่อโปรโมชั่น 4 — เช่น: แนะนำเพื่อน รับ X%]", width: 1600, height: 900 },
 ];
 
 /** รูปบทความ SEO */
 export const SEO_ARTICLE_IMAGES: Record<string, SeoArticleImage> = {
-  "seo-1": { src: "/images/seo1.webp", alt: "คำอธิบาย", width: 1200, height: 556 },
-  "seo-2": { src: "/images/seo2.webp", alt: "คำอธิบาย", width: 1200, height: 556 },
-  "seo-3": { src: "/images/seo3.webp", alt: "คำอธิบาย", width: 1200, height: 556 },
+  "seo-1": { src: "/images/seo1.webp", alt: "คำอธิบาย", width: 1600, height: 900 },
+  "seo-2": { src: "/images/seo2.webp", alt: "คำอธิบาย", width: 1600, height: 900 },
+  "seo-3": { src: "/images/seo3.webp", alt: "คำอธิบาย", width: 1600, height: 900 },
 
 };
 

@@ -1,0 +1,85 @@
+---
+import { getPromoPreview } from "@/lib/images";
+import { PROMOTION_SECTION } from "@/data/content/promotionSection";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+
+const promos = getPromoPreview(3);
+---
+
+<section class="promo-bs3" aria-labelledby="promo-heading">
+  <div class="promo-bs3-box">
+    <h2 id="promo-heading">{PROMOTION_SECTION.heading}</h2>
+    <div class="promo-bs3-row">
+      <p id="sub-promo-heading">{PROMOTION_SECTION.description}</p>
+      <div class="promo-bs3-carousel" aria-label="สไลด์โปรโมชั่น" role="region">
+        <div class="promo-bs3-track" id="promo-bs3-track">
+          {promos.map(({ alt, src, width, height }) => (
+            <a href={externalLink} class="promo-bs3-slide" aria-label={alt}>
+              <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.promo-bs3-carousel {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.promo-bs3-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.promo-bs3-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  display: block;
+}
+
+.promo-bs3-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+</style>
+
+<script is:inline>
+(function () {
+  var track = document.getElementById("promo-bs3-track");
+  if (!track) return;
+
+  var slides = track.querySelectorAll(".promo-bs3-slide");
+  var total = slides.length;
+  if (total === 0) return;
+
+  var current = 0;
+  var timer;
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = "translateX(-" + (current * 100) + "%)";
+  }
+
+  function start() {
+    timer = setInterval(function () { goTo(current + 1); }, 3000);
+  }
+
+  function stop() {
+    clearInterval(timer);
+  }
+
+  track.addEventListener("touchstart", stop, { passive: true });
+  track.addEventListener("touchend", function () { goTo(current); start(); }, { passive: true });
+
+  start();
+})();
+</script>

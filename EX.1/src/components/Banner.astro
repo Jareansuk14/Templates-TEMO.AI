@@ -1,21 +1,15 @@
 ---
 import { BANNER, hasBannerImage } from "@/lib/images";
-
 const hasBanner = hasBannerImage();
 ---
 
-<!-- HERO BANNER SECTION -->
-<section class="hero-banner-section" aria-label="Hero banner">
+<section class="bn-full" aria-label="แบนเนอร์หลัก">
   {hasBanner && (
-    <img
-      src={BANNER.src}
-      alt={BANNER.alt}
-      class="hero-banner-img"
-      width={BANNER.width}
-      height={BANNER.height}
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
-    />
+    <img src={BANNER.src} alt={BANNER.alt} width={BANNER.width} height={BANNER.height} loading="eager" fetchpriority="high" decoding="async" />
   )}
 </section>
+
+<style>
+.bn-full { display: block; }
+.bn-full img { width: 100%; height: auto; display: block; }
+</style>

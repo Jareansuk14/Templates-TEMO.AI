@@ -1,0 +1,25 @@
+{
+  "kind": "Provider",
+  "variant": "Compact",
+  "componentName": "ProviderCompact",
+  "displayName": "ค่ายเกม • กระชับ",
+  "astroFile": "ProviderCompact.astro",
+  "cssFile": "ProviderCompact.css",
+  "slot": "body",
+  "required": false,
+  "weight": 60,
+  "hasExternalLink": false,
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [],
+  "images": [
+    {
+      "id": "provider",
+      "role": "provider",
+      "ratio": "auto",
+      "required": false
+    }
+  ]
+}

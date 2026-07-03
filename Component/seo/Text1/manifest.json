@@ -1,9 +1,0 @@
-{
-  "kind": "Seo",
-  "variant": "Text1",
-  "componentName": "SeoText1",
-  "displayName": "SEO • ข้อความ (1 หัวข้อ)",
-  "astroFile": "SeoText1.astro",
-  "cssFile": "SeoText1.css",
-  "hasExternalLink": false
-}

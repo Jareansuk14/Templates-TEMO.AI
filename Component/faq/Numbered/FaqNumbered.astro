@@ -1,0 +1,43 @@
+---
+import { FAQ as faqs } from "@/data/content/faq";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+<section class="faqv-num" aria-labelledby="faq-global-heading">
+  <div class="container">
+    <h2 id="faq-global-heading">คำถามที่พบบ่อย</h2>
+    <div class="faqv-num-list">
+      {faqs.map(({ q, a }, i) => (
+        <article class="faqv-num-item">
+          <span class="faqv-num-badge" aria-hidden="true">Q{i + 1}</span>
+          <div>
+            <h3 id={`faq-q-${i + 1}`}>{q}</h3>
+            <p id={`faq-a-${i + 1}`}>{a}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.faqv-num { padding: 2.5rem var(--container-pad); }
+.faqv-num > .container { max-width: 860px; margin-inline: auto; }
+.faqv-num h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); text-align: center; margin-bottom: 1.75rem; }
+.faqv-num-list { display: flex; flex-direction: column; gap: 1.25rem; }
+.faqv-num-item { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start; }
+.faqv-num-badge { background: var(--color-primary); color: var(--btn-primary-text); font-weight: 700; border-radius: var(--radius-sm); padding: 0.35rem 0.6rem; font-size: var(--fz-xs); }
+.faqv-num-item h3 { color: var(--color-text); font-size: var(--fz-card-title); margin-bottom: 0.4rem; }
+.faqv-num-item p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }
+</style>

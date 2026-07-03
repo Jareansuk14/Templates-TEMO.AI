@@ -1,0 +1,33 @@
+---
+import { LINE } from "@/config/site";
+import { CONTACT_PAGE } from "@/data/content/contactPage";
+import { LINE_QR } from "@/lib/images";
+const lineUrl = `https://line.me/ti/p/~${LINE.id}`;
+---
+
+<section class="cp-min">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span aria-current="page">ติดต่อเรา</span></nav>
+    <h1 id="contact-seo">{CONTACT_PAGE.heading}</h1>
+    <p id="sub-contact-seo">{CONTACT_PAGE.description}</p>
+    <div class="cp-min-row" aria-labelledby="contact-heading">
+      <img src={LINE_QR.src} alt={`QR Code LINE ${LINE.id}`} width={LINE_QR.width} height={LINE_QR.height} loading="lazy" decoding="async" />
+      <div>
+        <h2 id="contact-heading">แอดไลน์เพื่อรับสิทธิพิเศษ</h2>
+        <a href={lineUrl} class="cp-min-id">{LINE.id}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.cp-min { padding: 2.5rem var(--container-pad) 3.5rem; }
+.cp-min > .container { max-width: 720px; margin-inline: auto; }
+.cp-min h1 { color: var(--color-text); font-size: var(--fz-page-title); margin: 0.75rem 0 0.5rem; }
+.cp-min > .container > p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0 0 2rem; }
+.cp-min-row { display: flex; align-items: center; gap: 1.5rem; border-top: 1px solid var(--color-border-subtle); padding-top: 2rem; }
+.cp-min-row img { width: 140px; height: auto; background: #fff; padding: 8px; border-radius: var(--radius-md); }
+.cp-min-row h2 { color: var(--color-text); font-size: var(--fz-card-title); margin: 0 0 0.5rem; }
+.cp-min-id { color: var(--color-primary); font-weight: 800; font-size: var(--fz-card-title); }
+@media (max-width: 520px) { .cp-min-row { flex-direction: column; text-align: center; } }
+</style>

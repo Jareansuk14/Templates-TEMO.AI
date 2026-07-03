@@ -1,0 +1,11 @@
+﻿.promo-tilt { padding: var(--section-pad-y) var(--container-pad); }
+.promo-tilt > .container { max-width: 940px; margin-inline: auto; }
+.promo-tilt-head { text-align: center; max-width: 760px; margin: 0 auto 2.25rem; }
+.promo-tilt-head h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); margin-bottom: 0.6rem; }
+.promo-tilt-head p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }
+.promo-tilt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.promo-tilt-card { display: block; padding: 5px; border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--color-accent), var(--color-primary)); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.promo-tilt-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); }
+.promo-tilt-inner { display: block; border-radius: calc(var(--radius-lg) - 3px); overflow: hidden; background: var(--color-bg); }
+.promo-tilt-inner img { width: 100%; height: auto; display: block; }
+@media (max-width: 640px) { .promo-tilt-grid { grid-template-columns: 1fr; } }

@@ -2,8 +2,34 @@
   "kind": "Hero",
   "variant": "OneImage",
   "componentName": "HeroOneImage",
-  "displayName": "Hero • ข้อความ + 1 รูป",
+  "displayName": "Hero • สปอตไลต์",
   "astroFile": "HeroOneImage.astro",
   "cssFile": "HeroOneImage.css",
-  "hasExternalLink": true
+  "slot": "body",
+  "required": true,
+  "weight": 10,
+  "hasExternalLink": true,
+  "dataFile": "data/content/hero.ts",
+  "dataConst": "HERO",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [
+    {
+      "id": "main-seo",
+      "key": "heading",
+      "label": "หัวข้อหลัก (H1)",
+      "type": "heading",
+      "group": "HERO"
+    },
+    {
+      "id": "sub-main-seo",
+      "key": "description",
+      "label": "คำอธิบาย Hero",
+      "type": "body",
+      "group": "HERO"
+    }
+  ],
+  "images": []
 }

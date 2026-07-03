@@ -1,0 +1,48 @@
+{
+  "kind": "Seo",
+  "variant": "PlainTopPlay2",
+  "componentName": "SeoPlainTopPlay2",
+  "displayName": "SEO • รูปใหญ่บน + ปุ่ม/มาสคอต + หัวข้อ 2 (ไม่มีกล่อง)",
+  "astroFile": "SeoPlainTopPlay2.astro",
+  "cssFile": "SeoPlainTopPlay2.css",
+  "slot": "body",
+  "required": true,
+  "weight": 30,
+  "hasExternalLink": true,
+  "dataFile": "data/content/seo.ts",
+  "dataConst": "SEO",
+  "repeatable": true,
+  "imageRatio": "16:9",
+  "imageType": "normal",
+  "imageGroup": "seo",
+  "imageCount": 1,
+  "headingCount": 2,
+  "fields": [
+    {
+      "id": "seo-{n}",
+      "key": "heading",
+      "label": "SEO {n} — หัวข้อ",
+      "type": "heading",
+      "group": "SEO"
+    },
+    {
+      "id": "sub-seo-{n}",
+      "key": "desc",
+      "label": "SEO {n} — เนื้อหา",
+      "type": "body",
+      "group": "SEO"
+    }
+  ],
+  "images": [
+    {
+      "id": "play",
+      "role": "play button",
+      "required": true
+    },
+    {
+      "id": "seoMascot",
+      "role": "transparent SEO character mascot",
+      "required": true
+    }
+  ]
+}

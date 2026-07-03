@@ -1,0 +1,35 @@
+{
+  "kind": "Promotion",
+  "variant": "TiltGrid",
+  "componentName": "PromotionTiltGrid",
+  "displayName": "Promotion • การ์ดกรอบ gradient เอียง",
+  "astroFile": "PromotionTiltGrid.astro",
+  "cssFile": "PromotionTiltGrid.css",
+  "slot": "body",
+  "required": false,
+  "weight": 40,
+  "hasExternalLink": true,
+  "dataFile": "data/content/promotionSection.ts",
+  "dataConst": "PROMOTION_SECTION",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "promo",
+  "fields": [
+    {
+      "id": "promo-heading",
+      "key": "heading",
+      "label": "หัวข้อ Promotion",
+      "type": "heading",
+      "group": "PROMOTION SECTION"
+    },
+    {
+      "id": "sub-promo-heading",
+      "key": "description",
+      "label": "คำอธิบาย Promotion",
+      "type": "body",
+      "group": "PROMOTION SECTION"
+    }
+  ],
+  "images": []
+}

@@ -1,0 +1,25 @@
+---
+import { BANNER, hasBannerImage, ACTION_BUTTONS } from "@/lib/images";
+import { EXTERNAL_LINK } from "@/config/site";
+const hasBanner = hasBannerImage();
+const { login, register } = ACTION_BUTTONS;
+---
+
+<section class="bn-rndb" aria-label="แบนเนอร์หลัก">
+  <div class="container">
+    {hasBanner && (
+      <img src={BANNER.src} alt={BANNER.alt} width={BANNER.width} height={BANNER.height} loading="eager" fetchpriority="high" decoding="async" />
+    )}
+    <div class="bn-sp-actions">
+      <a href={EXTERNAL_LINK} aria-label={register.alt}><img src={register.src} alt={register.alt} width={register.width} height={register.height} loading="eager" decoding="async" /></a>
+      <a href={EXTERNAL_LINK} aria-label={login.alt}><img src={login.src} alt={login.alt} width={login.width} height={login.height} loading="eager" decoding="async" /></a>
+    </div>
+  </div>
+</section>
+
+<style>
+.bn-rndb { padding: 1.25rem var(--container-pad); }
+.bn-rndb > .container { max-width: var(--container-max); margin-inline: auto; }
+.bn-rndb > .container > img { width: 100%; height: auto; display: block; border-radius: var(--radius-xl); }
+.bn-rndb .bn-sp-actions { display: flex; flex-direction: row; justify-content: center; gap: 1.25rem; margin-top: 1.25rem; }
+</style>

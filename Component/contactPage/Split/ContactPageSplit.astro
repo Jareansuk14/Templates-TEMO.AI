@@ -1,0 +1,33 @@
+---
+import { LINE } from "@/config/site";
+import { CONTACT_PAGE } from "@/data/content/contactPage";
+import { LINE_QR } from "@/lib/images";
+const lineUrl = `https://line.me/ti/p/~${LINE.id}`;
+---
+
+<section class="cp-sp">
+  <div class="container cp-sp-grid">
+    <div class="cp-sp-info">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span aria-current="page">ติดต่อเรา</span></nav>
+      <h1 id="contact-seo">{CONTACT_PAGE.heading}</h1>
+      <p id="sub-contact-seo">{CONTACT_PAGE.description}</p>
+      <a href={lineUrl} class="cp-sp-btn" aria-label={`เพิ่มเพื่อน LINE ${LINE.id}`}>เพิ่มเพื่อน {LINE.id}</a>
+    </div>
+    <div class="cp-sp-qr" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="cp-sp-qr-title">สแกนเพื่อแอดไลน์</h2>
+      <img src={LINE_QR.src} alt={`QR Code LINE ${LINE.id}`} width={LINE_QR.width} height={LINE_QR.height} loading="lazy" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<style>
+.cp-sp { padding: 2.5rem var(--container-pad) 3.5rem; }
+.cp-sp-grid { max-width: var(--container-max); margin-inline: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+.cp-sp-info h1 { color: var(--color-text); font-size: var(--fz-page-title); margin: 0.75rem 0 0.75rem; }
+.cp-sp-info p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0 0 1.5rem; }
+.cp-sp-btn { display: inline-block; background: var(--color-primary); color: var(--color-on-primary); font-weight: 700; padding: 0.8rem 1.8rem; border-radius: var(--radius-pill); }
+.cp-sp-qr { text-align: center; background: var(--color-bg-2); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); padding: 2rem; }
+.cp-sp-qr-title { color: var(--color-text); font-size: var(--fz-card-title); margin: 0 0 1rem; }
+.cp-sp-qr img { width: 220px; max-width: 100%; height: auto; display: inline-block; background: #fff; padding: 10px; border-radius: var(--radius-md); }
+@media (max-width: 760px) { .cp-sp-grid { grid-template-columns: 1fr; } }
+</style>

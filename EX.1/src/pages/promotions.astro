@@ -1,8 +1,9 @@
-﻿---
+---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { SITE, EXTERNAL_LINK } from "@/config/site";
+import { SITE } from "@/config/site";
 import { getPromotionSeoHeading, getPromotionSeoDescription } from "@/lib/seo-content";
 import { PROMOS } from "@/lib/images";
+import PromotionsBody from "@/components/page/PromotionsBody.astro";
 
 const promotionSeo = getPromotionSeoHeading();
 const pageDescription = getPromotionSeoDescription();
@@ -25,41 +26,5 @@ const jsonLd = {
   keywords={[SITE.name, ...promoKeywords].join(", ")}
   jsonLd={jsonLd}
 >
-
-  <!-- PAGE HEADER -->
-  <section class="page-header">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">หน้าแรก</a>
-        <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <span aria-current="page">โปรโมชั่น</span>
-      </nav>
-      <h1 id="promotion-seo">โปรโมชั่นสล็อต TEMO888 เงื่อนไขชัด รับแล้วใช้งานง่าย</h1>
-      <p id="sub-promotion-seo">โปรที่ดีต้องอ่านแล้วรู้ทันทีว่าเหมาะกับแผนเล่นหรือไม่ TEMO888 แสดงรายละเอียดโบนัสสล็อตไว้ชัด ทั้งข้อกำหนดการทำยอด เกมที่ร่วมโปร และเงื่อนไขถอน จากประสบการณ์ผมจะเลือกโปรให้ตรงกับเกม RTP สูงหรือแนวฟรีสปินที่ถนัด เพราะคุมความเสี่ยงและเพิ่มรอบลุ้นได้ดีกว่า</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="promo-grid-5">
-        {PROMOS.map(({ src, alt, width, height }, i) => (
-          <a
-            href={EXTERNAL_LINK}
-            class="promo-full-card"
-            aria-label={alt}
-          >
-            <img
-              src={src}
-              alt={alt}
-              width={width}
-              height={height}
-              loading={i < 2 ? "eager" : "lazy"}
-              decoding="async"
-            />
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
+  <PromotionsBody />
 </BaseLayout>

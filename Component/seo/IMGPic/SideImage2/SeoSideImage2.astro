@@ -1,0 +1,28 @@
+---
+import { SEO_ARTICLE_IMAGES } from "@/lib/images";
+import { SEO } from "@/data/content/seo";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+---
+
+<section class="seo-side" aria-label="ข้อมูลเด่น">
+  <div class="container">
+    {SEO.map(({ id, heading, desc }) => {
+      const image = SEO_ARTICLE_IMAGES[id];
+      return (
+        <div class="seo-side-row">
+          {image && (
+            <a href={externalLink} class="seo-side-img" aria-label={image.alt} id={id}>
+              <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+            </a>
+          )}
+          <article class="seo-side-box" aria-labelledby={`${id}-title`}>
+            <h2 id={`${id}-title`}>{heading}</h2>
+            <p id={`sub-${id}`}>{desc}</p>
+          </article>
+        </div>
+      );
+    })}
+  </div>
+</section>

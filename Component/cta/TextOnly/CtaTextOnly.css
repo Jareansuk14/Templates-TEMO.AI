@@ -1,5 +1,5 @@
 .cta-section {
-  padding: 1rem var(--container-pad);
+  padding: var(--section-pad-y) var(--container-pad);
   background: transparent;
   text-align: center;
 }
@@ -78,7 +78,7 @@
 }
 
 @media (max-width: 768px) {
-  .cta-section { padding: 0.625rem var(--container-pad); }
+  .cta-section { padding: var(--section-pad-y) var(--container-pad); }
   .hero-action-pair { flex-direction: row; flex-wrap: nowrap; gap: 0.5rem; max-width: 100%; }
   .hero-action-link { min-width: unset; flex: 1; width: auto; }
   .hero-action-link img { max-height: 58px; object-fit: contain; object-position: center; }
@@ -86,7 +86,7 @@
 }
 
 @media (max-width: 480px) {
-  .cta-section { padding: 0.5rem var(--container-pad); }
+  .cta-section { padding: var(--section-pad-y) var(--container-pad); }
   .hero-actions-col .hero-action-link img,
   .hero-action-link img,
   .cta-section .hero-action-link img { max-height: 48px; }

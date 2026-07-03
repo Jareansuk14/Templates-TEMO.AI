@@ -1,0 +1,35 @@
+{
+  "kind": "Cta",
+  "variant": "Ribbon",
+  "componentName": "CtaRibbon",
+  "displayName": "CTA • ริบบิ้นเน้น",
+  "astroFile": "CtaRibbon.astro",
+  "cssFile": "CtaRibbon.css",
+  "slot": "body",
+  "required": false,
+  "weight": 50,
+  "hasExternalLink": true,
+  "dataFile": "data/content/cta.ts",
+  "dataConst": "CTA",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [
+    {
+      "id": "cta-seo",
+      "key": "heading",
+      "label": "หัวข้อ CTA",
+      "type": "heading",
+      "group": "CTA"
+    },
+    {
+      "id": "sub-cta-seo",
+      "key": "description",
+      "label": "คำอธิบาย CTA",
+      "type": "body",
+      "group": "CTA"
+    }
+  ],
+  "images": []
+}

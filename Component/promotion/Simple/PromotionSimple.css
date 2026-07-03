@@ -1,0 +1,6 @@
+﻿.promo-simple { padding: var(--section-pad-y) var(--container-pad); text-align: center; }
+.promo-simple > .container { max-width: 760px; margin-inline: auto; }
+.promo-simple h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); margin-bottom: 0.6rem; }
+.promo-simple p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin-bottom: 1.5rem; }
+.promo-simple-img { display: block; margin-bottom: 1.5rem; }
+.promo-simple-img img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); }

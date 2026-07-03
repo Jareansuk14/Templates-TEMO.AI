@@ -1,3 +1,6 @@
+.prov-logos { padding: var(--section-pad-y) var(--container-pad); }
+.prov-logos > .container { padding: 0; }
+
 .provider-single-wrap {
   max-width: 960px;
   margin-inline: auto;

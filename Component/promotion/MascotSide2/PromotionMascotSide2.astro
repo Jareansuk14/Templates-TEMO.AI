@@ -1,0 +1,37 @@
+---
+import { getPromoPreview, SEO_MASCOT } from "@/lib/images";
+import { PROMOTION_SECTION } from "@/data/content/promotionSection";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+
+const [promo1, promo2] = getPromoPreview(2);
+---
+
+<section class="promo-msd2" aria-labelledby="promo-heading">
+  <div class="promo-msd2-inner">
+    <header class="promo-msd2-head">
+      <h2 id="promo-heading">{PROMOTION_SECTION.heading}</h2>
+      <p id="sub-promo-heading">{PROMOTION_SECTION.description}</p>
+    </header>
+
+    <div class="promo-msd2-body">
+      <div class="promo-msd2-side">
+        {promo1 && (
+          <a href={externalLink} class="promo-msd2-img" aria-label={promo1.alt}>
+            <img src={promo1.src} alt={promo1.alt} width={promo1.width} height={promo1.height} loading="lazy" decoding="async" />
+          </a>
+        )}
+        {promo2 && (
+          <a href={externalLink} class="promo-msd2-img" aria-label={promo2.alt}>
+            <img src={promo2.src} alt={promo2.alt} width={promo2.width} height={promo2.height} loading="lazy" decoding="async" />
+          </a>
+        )}
+      </div>
+
+      <div class="promo-msd2-mascot">
+        <img src={SEO_MASCOT.src} alt={SEO_MASCOT.alt} width={SEO_MASCOT.width} height={SEO_MASCOT.height} loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </div>
+</section>

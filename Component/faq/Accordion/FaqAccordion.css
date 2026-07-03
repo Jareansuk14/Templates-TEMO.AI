@@ -1,0 +1,4 @@
+.faq-grid { display: grid; gap: 0.75rem; }
+.faq-item { border: 1px solid var(--border, #222); border-radius: var(--radius, 8px); padding: 0.5rem 1rem; }
+.faq-item summary { cursor: pointer; font-weight: 600; }
+.faq-answer { margin-top: 0.5rem; }

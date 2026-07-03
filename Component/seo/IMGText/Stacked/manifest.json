@@ -1,0 +1,37 @@
+{
+  "kind": "Seo",
+  "variant": "Stacked",
+  "componentName": "SeoStacked",
+  "displayName": "SEO • ซ้อนแนวตั้งมีเส้นคั่น",
+  "astroFile": "SeoStacked.astro",
+  "cssFile": "SeoStacked.css",
+  "slot": "body",
+  "required": true,
+  "weight": 30,
+  "hasExternalLink": false,
+  "dataFile": "data/content/seo.ts",
+  "dataConst": "SEO",
+  "repeatable": true,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "imageCount": 0,
+  "headingCount": 3,
+  "fields": [
+    {
+      "id": "seo-{n}",
+      "key": "heading",
+      "label": "SEO {n} — หัวข้อ",
+      "type": "heading",
+      "group": "SEO"
+    },
+    {
+      "id": "sub-seo-{n}",
+      "key": "desc",
+      "label": "SEO {n} — เนื้อหา",
+      "type": "body",
+      "group": "SEO"
+    }
+  ],
+  "images": []
+}

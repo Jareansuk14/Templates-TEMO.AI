@@ -1,0 +1,9 @@
+﻿.hero-badge { padding: var(--section-pad-y) var(--container-pad); text-align: center; }
+.hero-badge > .container { max-width: 820px; margin-inline: auto; }
+.hero-badge-tag { display: inline-block; padding: 0.35rem 1rem; border-radius: 999px; background: var(--color-primary-light); color: var(--color-accent); font-size: var(--fz-xs); font-weight: 600; margin-bottom: 1rem; border: 1px solid var(--color-border-subtle); }
+.hero-badge h1 { font-size: var(--fz-hero-title); color: var(--color-text); margin-bottom: 1rem; line-height: 1.25; }
+.hero-badge p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin-bottom: 1.75rem; }
+.hero-badge-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; max-width: 620px; margin-inline: auto; }
+.hero-badge-actions a { flex: 1; min-width: 170px; }
+.hero-badge-actions img { width: 100%; border-radius: var(--radius-md); display: block; }
+@media (max-width: 768px) { .hero-badge-actions { flex-wrap: nowrap; gap: 0.5rem; } .hero-badge-actions a { min-width: 0; } .hero-badge-actions img { max-height: 58px; object-fit: contain; } }

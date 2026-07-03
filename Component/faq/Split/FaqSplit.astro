@@ -1,0 +1,44 @@
+---
+import { FAQ as faqs } from "@/data/content/faq";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+<section class="faqv-sp" aria-labelledby="faq-global-heading">
+  <div class="container faqv-sp-grid">
+    <header class="faqv-sp-side">
+      <h2 id="faq-global-heading">คำถามที่พบบ่อย</h2>
+      <p>รวมคำตอบของข้อสงสัยที่ลูกค้าถามบ่อยที่สุด</p>
+    </header>
+    <div class="faqv-sp-list">
+      {faqs.map(({ q, a }, i) => (
+        <details class="faqv-sp-item">
+          <summary id={`faq-q-${i + 1}`}>{q}</summary>
+          <p id={`faq-a-${i + 1}`}>{a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.faqv-sp { padding: 2.5rem var(--container-pad); }
+.faqv-sp-grid { max-width: var(--container-max); margin-inline: auto; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 2rem; align-items: start; }
+.faqv-sp-side h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); margin-bottom: 0.6rem; }
+.faqv-sp-side p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }
+.faqv-sp-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.faqv-sp-item { background: var(--color-bg-2); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-md); padding: 0.85rem 1.25rem; }
+.faqv-sp-item summary { cursor: pointer; color: var(--color-text); font-weight: 600; }
+.faqv-sp-item p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0.75rem 0 0.25rem; }
+@media (max-width: 768px) { .faqv-sp-grid { grid-template-columns: 1fr; } }
+</style>

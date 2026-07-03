@@ -1,0 +1,38 @@
+---
+import { FAQ as faqs } from "@/data/content/faq";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+<section class="faqv-bub" aria-labelledby="faq-global-heading">
+  <div class="container">
+    <h2 id="faq-global-heading">คำถามที่พบบ่อย</h2>
+    <div class="faqv-bub-list">
+      {faqs.map(({ q, a }, i) => (
+        <div class="faqv-bub-item">
+          <p class="faqv-bub-q" id={`faq-q-${i + 1}`}>{q}</p>
+          <p class="faqv-bub-a" id={`faq-a-${i + 1}`}>{a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.faqv-bub { padding: 2.5rem var(--container-pad); }
+.faqv-bub > .container { max-width: 760px; margin-inline: auto; }
+.faqv-bub h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); text-align: center; margin-bottom: 1.75rem; }
+.faqv-bub-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.faqv-bub-q { color: var(--btn-primary-text); background: var(--color-primary); border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 4px; padding: 0.85rem 1.1rem; margin: 0 auto 0.5rem 0; max-width: 80%; font-weight: 600; }
+.faqv-bub-a { color: var(--color-text-muted); background: var(--color-bg-2); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg) var(--radius-lg) 4px var(--radius-lg); padding: 0.85rem 1.1rem; margin: 0 0 0 auto; max-width: 85%; font-size: var(--fz-body); line-height: var(--lh-body); }
+</style>

@@ -1,0 +1,4 @@
+﻿.prov-cp { padding: var(--section-pad-y) var(--container-pad); }
+.prov-cp > .container { max-width: 880px; margin-inline: auto; text-align: center; }
+.prov-cp-h { color: var(--color-text-muted); font-size: var(--fz-body-lg); font-weight: 600; letter-spacing: 0.04em; margin-bottom: 0.85rem; text-transform: none; }
+.prov-cp img { width: 100%; height: auto; display: block; opacity: 0.92; }

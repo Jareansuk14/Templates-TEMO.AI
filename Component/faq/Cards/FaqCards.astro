@@ -1,0 +1,39 @@
+---
+import { FAQ as faqs } from "@/data/content/faq";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+<section class="faqv-cards" aria-labelledby="faq-global-heading">
+  <div class="container">
+    <h2 id="faq-global-heading">คำถามที่พบบ่อย</h2>
+    <div class="faqv-cards-grid">
+      {faqs.map(({ q, a }, i) => (
+        <article class="faqv-card">
+          <h3 id={`faq-q-${i + 1}`}>{q}</h3>
+          <p id={`faq-a-${i + 1}`}>{a}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.faqv-cards { padding: 2.5rem var(--container-pad); }
+.faqv-cards > .container { max-width: var(--container-max); margin-inline: auto; }
+.faqv-cards h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); text-align: center; margin-bottom: 1.75rem; }
+.faqv-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+.faqv-card { background: var(--glass-bg); border: var(--glass-border); border-radius: var(--radius-lg); padding: 1.5rem; }
+.faqv-card h3 { color: var(--color-accent); font-size: var(--fz-card-title); margin-bottom: 0.6rem; }
+.faqv-card p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }
+</style>

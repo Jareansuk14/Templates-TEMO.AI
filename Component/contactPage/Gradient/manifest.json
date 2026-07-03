@@ -1,0 +1,34 @@
+{
+  "kind": "ContactPage",
+  "variant": "Gradient",
+  "componentName": "ContactPageGradient",
+  "displayName": "หน้าติดต่อ • การ์ดไล่สี",
+  "astroFile": "ContactPageGradient.astro",
+  "slot": "page:contact",
+  "required": true,
+  "weight": 800,
+  "hasExternalLink": false,
+  "dataFile": "data/content/contactPage.ts",
+  "dataConst": "CONTACT_PAGE",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [
+    {
+      "id": "contact-seo",
+      "key": "heading",
+      "label": "หัวข้อหน้าติดต่อ (H1)",
+      "type": "heading",
+      "group": "CONTACT"
+    },
+    {
+      "id": "sub-contact-seo",
+      "key": "description",
+      "label": "คำอธิบายหน้าติดต่อ",
+      "type": "body",
+      "group": "CONTACT"
+    }
+  ],
+  "images": []
+}

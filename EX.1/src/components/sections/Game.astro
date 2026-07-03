@@ -4,11 +4,11 @@ import { GAME_CARDS } from "@/lib/images";
 interface Props { externalLink: string; }
 const { externalLink } = Astro.props;
 
-const cards = GAME_CARDS.slice(0, 6);
+const cards = GAME_CARDS;
 ---
 
 <div class="games-strip" aria-label="เกมที่เราให้บริการ">
-  <div class="games-strip-inner">
+  <div class="games-strip-inner" data-count={cards.length}>
     {cards.map(({ alt, src, width, height }) => (
       <a href={externalLink} class="game-img-card" aria-label={alt}>
         <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />

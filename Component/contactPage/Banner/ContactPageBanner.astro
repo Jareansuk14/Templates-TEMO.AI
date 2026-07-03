@@ -1,0 +1,31 @@
+---
+import { LINE } from "@/config/site";
+import { CONTACT_PAGE } from "@/data/content/contactPage";
+import { LINE_QR } from "@/lib/images";
+const lineUrl = `https://line.me/ti/p/~${LINE.id}`;
+---
+
+<section class="cp-bn" aria-labelledby="contact-heading">
+  <div class="container cp-bn-grid">
+    <div class="cp-bn-text">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span aria-current="page">ติดต่อเรา</span></nav>
+      <h1 id="contact-seo">{CONTACT_PAGE.heading}</h1>
+      <p id="sub-contact-seo">{CONTACT_PAGE.description}</p>
+      <h2 id="contact-heading" class="cp-bn-sub">แอดไลน์ตอนนี้ รับโบนัสทันที</h2>
+      <a href={lineUrl} class="cp-bn-btn">เพิ่มเพื่อน {LINE.id}</a>
+    </div>
+    <div class="cp-bn-qr"><img src={LINE_QR.src} alt={`QR Code LINE ${LINE.id}`} width={LINE_QR.width} height={LINE_QR.height} loading="lazy" decoding="async" /></div>
+  </div>
+</section>
+
+<style>
+.cp-bn { padding: 3rem var(--container-pad); background: radial-gradient(ellipse at right, var(--color-bg-3), var(--color-bg)); }
+.cp-bn-grid { max-width: var(--container-max); margin-inline: auto; display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: center; }
+.cp-bn-text h1 { color: var(--color-text); font-size: var(--fz-page-title); margin: 0.75rem 0 0.5rem; }
+.cp-bn-text > p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0 0 1.25rem; }
+.cp-bn-sub { color: var(--color-primary); font-size: var(--fz-card-title); margin: 0 0 1.25rem; }
+.cp-bn-btn { display: inline-block; background: var(--color-primary); color: var(--color-on-primary); font-weight: 700; padding: 0.85rem 2rem; border-radius: var(--radius-pill); }
+.cp-bn-qr { text-align: center; }
+.cp-bn-qr img { width: 230px; max-width: 100%; height: auto; background: #fff; padding: 12px; border-radius: var(--radius-lg); }
+@media (max-width: 760px) { .cp-bn-grid { grid-template-columns: 1fr; } }
+</style>

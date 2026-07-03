@@ -1,0 +1,41 @@
+{
+  "kind": "Promotion",
+  "variant": "MascotSide2",
+  "componentName": "PromotionMascotSide2",
+  "displayName": "Promotion • รูป 2 ซ้าย + มาสคอตขวา",
+  "astroFile": "PromotionMascotSide2.astro",
+  "cssFile": "PromotionMascotSide2.css",
+  "slot": "body",
+  "required": false,
+  "weight": 42,
+  "hasExternalLink": true,
+  "dataFile": "data/content/promotionSection.ts",
+  "dataConst": "PROMOTION_SECTION",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "promo",
+  "fields": [
+    {
+      "id": "promo-heading",
+      "key": "heading",
+      "label": "หัวข้อ Promotion",
+      "type": "heading",
+      "group": "PROMOTION SECTION"
+    },
+    {
+      "id": "sub-promo-heading",
+      "key": "description",
+      "label": "คำอธิบาย Promotion",
+      "type": "body",
+      "group": "PROMOTION SECTION"
+    }
+  ],
+  "images": [
+    {
+      "id": "seoMascot",
+      "role": "transparent SEO character mascot",
+      "required": true
+    }
+  ]
+}

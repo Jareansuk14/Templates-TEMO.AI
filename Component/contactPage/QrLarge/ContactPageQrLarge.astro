@@ -1,0 +1,33 @@
+---
+import { LINE } from "@/config/site";
+import { CONTACT_PAGE } from "@/data/content/contactPage";
+import { LINE_QR } from "@/lib/images";
+const lineUrl = `https://line.me/ti/p/~${LINE.id}`;
+---
+
+<section class="cp-ql-head">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">หน้าแรก</a><span class="breadcrumb-sep" aria-hidden="true">/</span><span aria-current="page">ติดต่อเรา</span></nav>
+    <h1 id="contact-seo">{CONTACT_PAGE.heading}</h1>
+    <p id="sub-contact-seo">{CONTACT_PAGE.description}</p>
+  </div>
+</section>
+
+<section class="cp-ql-sec" aria-labelledby="contact-heading">
+  <div class="container">
+    <h2 id="contact-heading">สแกน QR เพื่อแอดไลน์</h2>
+    <div class="cp-ql-frame"><img src={LINE_QR.src} alt={`QR Code LINE ${LINE.id}`} width={LINE_QR.width} height={LINE_QR.height} loading="lazy" decoding="async" /></div>
+    <a href={lineUrl} class="cp-ql-id">{LINE.id}</a>
+  </div>
+</section>
+
+<style>
+.cp-ql-head { padding: 2.5rem var(--container-pad) 0.5rem; text-align: center; }
+.cp-ql-head h1 { color: var(--color-text); font-size: var(--fz-page-title); margin: 0.75rem 0 0.5rem; }
+.cp-ql-head p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); max-width: 640px; margin-inline: auto; }
+.cp-ql-sec { padding: 1.5rem var(--container-pad) 4rem; text-align: center; }
+.cp-ql-sec h2 { color: var(--color-text); font-size: var(--fz-card-title); margin: 0 0 1.5rem; }
+.cp-ql-frame { display: inline-block; background: #fff; padding: 18px; border-radius: var(--radius-xl); box-shadow: 0 12px 40px rgba(0,0,0,0.45); }
+.cp-ql-frame img { width: 280px; max-width: 70vw; height: auto; display: block; }
+.cp-ql-id { display: block; margin-top: 1.5rem; color: var(--color-primary); font-weight: 800; font-size: var(--fz-section-title); }
+</style>

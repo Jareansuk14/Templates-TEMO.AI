@@ -1,0 +1,21 @@
+---
+import { ACTION_BUTTONS } from "@/lib/images";
+import { CTA } from "@/data/content/cta";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+const { register } = ACTION_BUTTONS;
+---
+
+<section class="cta-ribbon" aria-labelledby="cta-seo">
+  <div class="container cta-ribbon-inner">
+    <span class="cta-ribbon-flag" aria-hidden="true">HOT</span>
+    <div class="cta-ribbon-text">
+      <h2 id="cta-seo">{CTA.heading}</h2>
+      <p id="sub-cta-seo">{CTA.description}</p>
+    </div>
+    <a class="cta-ribbon-btn" href={externalLink} aria-label={register.alt}>
+      <img src={register.src} alt={register.alt} width={register.width} height={register.height} loading="lazy" decoding="async" />
+    </a>
+  </div>
+</section>

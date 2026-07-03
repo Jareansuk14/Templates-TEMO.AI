@@ -1,0 +1,43 @@
+{
+  "kind": "Seo",
+  "variant": "PlainSideBox3",
+  "componentName": "SeoPlainSideBox3",
+  "displayName": "SEO • รูป/หัวข้อ 1 บน + มาสคอต/กล่อง 2-3 ล่าง 3",
+  "astroFile": "SeoPlainSideBox3.astro",
+  "cssFile": "SeoPlainSideBox3.css",
+  "slot": "body",
+  "required": true,
+  "weight": 30,
+  "hasExternalLink": true,
+  "dataFile": "data/content/seo.ts",
+  "dataConst": "SEO",
+  "repeatable": true,
+  "imageRatio": "16:9",
+  "imageType": "normal",
+  "imageGroup": "seo",
+  "imageCount": 1,
+  "headingCount": 3,
+  "fields": [
+    {
+      "id": "seo-{n}",
+      "key": "heading",
+      "label": "SEO {n} — หัวข้อ",
+      "type": "heading",
+      "group": "SEO"
+    },
+    {
+      "id": "sub-seo-{n}",
+      "key": "desc",
+      "label": "SEO {n} — เนื้อหา",
+      "type": "body",
+      "group": "SEO"
+    }
+  ],
+  "images": [
+    {
+      "id": "seoMascot",
+      "role": "transparent SEO character mascot",
+      "required": true
+    }
+  ]
+}

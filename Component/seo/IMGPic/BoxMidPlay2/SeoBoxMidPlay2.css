@@ -1,0 +1,116 @@
+.seo-bmp2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+  padding-block: var(--section-pad-y);
+}
+
+.seo-bmp2-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.seo-bmp2-mascot {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: min(
+    calc((var(--container-max) - var(--container-pad) * 2 - 1.5rem) / 2),
+    calc((100vw - var(--container-pad) * 2 - 1.5rem) / 2)
+  );
+}
+
+.seo-bmp2-mascot img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 24px 42px rgb(0 0 0 / 0.42));
+}
+
+.seo-bmp2-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.seo-bmp2-copy {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+}
+
+.seo-bmp2-copy h2 {
+  color: var(--color-text);
+  font-size: var(--fz-heading);
+  line-height: var(--lh-heading);
+  margin-bottom: 0.75rem;
+}
+
+.seo-bmp2-copy p {
+  color: var(--color-text-muted);
+  font-size: var(--fz-body);
+  line-height: var(--lh-body);
+  margin-bottom: 0;
+}
+
+.seo-bmp2-side .seo-play {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.seo-bmp2-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.seo-bmp2-img {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+}
+
+.seo-bmp2-img-inner {
+  display: block;
+  border-radius: calc(var(--radius-lg) - 3px);
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.seo-bmp2-img-inner img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .seo-bmp2-body { grid-template-columns: 1fr; }
+  .seo-bmp2-mascot { order: -1; width: min(100%, 20rem); margin-inline: auto; }
+  .seo-bmp2-row { grid-template-columns: 1fr; }
+  .seo-bmp2-copy {
+    background: var(--glass-bg-mobile);
+    backdrop-filter: none;
+    border: var(--glass-border-mobile);
+  }
+}

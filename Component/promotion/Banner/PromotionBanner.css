@@ -1,0 +1,7 @@
+﻿.promo-bn { padding: var(--section-pad-y) var(--container-pad); }
+.promo-bn-wrap { position: relative; display: block; max-width: var(--container-max); margin-inline: auto; border-radius: var(--radius-xl); overflow: hidden; }
+.promo-bn-wrap img { width: 100%; height: auto; display: block; }
+.promo-bn-text { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.5rem; padding: 2rem; background: linear-gradient(90deg, rgba(2,1,0,0.82) 0%, rgba(2,1,0,0.25) 70%, transparent 100%); }
+.promo-bn-text h2 {font-size: var(--fz-heading); line-height: var(--lh-heading); margin: 0; max-width: 60%; }
+.promo-bn-text p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; max-width: 55%; }
+@media (max-width: 768px) { .promo-bn-text { padding: 1rem; } .promo-bn-text h2 { max-width: 100%; } .promo-bn-text p { display: none; } }

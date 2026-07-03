@@ -1,0 +1,42 @@
+{
+  "kind": "Hero",
+  "variant": "TransparentMascot",
+  "componentName": "HeroTransparentMascot",
+  "displayName": "Hero • หัวข้อซ้าย + มาสคอตโปร่งใส",
+  "astroFile": "HeroTransparentMascot.astro",
+  "cssFile": "HeroTransparentMascot.css",
+  "slot": "body",
+  "required": true,
+  "weight": 10,
+  "hasExternalLink": false,
+  "dataFile": "data/content/hero.ts",
+  "dataConst": "HERO",
+  "repeatable": false,
+  "imageRatio": "1:1",
+  "imageType": "transparent",
+  "imageGroup": "heroMascot",
+  "fields": [
+    {
+      "id": "main-seo",
+      "key": "heading",
+      "label": "หัวข้อหลัก (H1)",
+      "type": "heading",
+      "group": "HERO"
+    },
+    {
+      "id": "sub-main-seo",
+      "key": "description",
+      "label": "คำอธิบาย Hero",
+      "type": "body",
+      "group": "HERO"
+    }
+  ],
+  "images": [
+    {
+      "id": "heroMascot",
+      "role": "transparent hero character mascot",
+      "ratio": "1:1",
+      "required": true
+    }
+  ]
+}

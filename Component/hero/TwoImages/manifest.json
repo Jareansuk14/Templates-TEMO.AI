@@ -1,9 +1,0 @@
-{
-  "kind": "Hero",
-  "variant": "TwoImages",
-  "componentName": "HeroTwoImages",
-  "displayName": "Hero • ข้อความ + 2 รูป",
-  "astroFile": "HeroTwoImages.astro",
-  "cssFile": "HeroTwoImages.css",
-  "hasExternalLink": true
-}

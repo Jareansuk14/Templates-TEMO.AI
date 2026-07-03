@@ -2,8 +2,34 @@
   "kind": "Hero",
   "variant": "TextOnly",
   "componentName": "HeroTextOnly",
-  "displayName": "Hero • ข้อความอย่างเดียว",
+  "displayName": "Hero • ข้อความล้วน",
   "astroFile": "HeroTextOnly.astro",
   "cssFile": "HeroTextOnly.css",
-  "hasExternalLink": false
+  "slot": "body",
+  "required": true,
+  "weight": 10,
+  "hasExternalLink": false,
+  "dataFile": "data/content/hero.ts",
+  "dataConst": "HERO",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [
+    {
+      "id": "main-seo",
+      "key": "heading",
+      "label": "หัวข้อหลัก (H1)",
+      "type": "heading",
+      "group": "HERO"
+    },
+    {
+      "id": "sub-main-seo",
+      "key": "description",
+      "label": "คำอธิบาย Hero",
+      "type": "body",
+      "group": "HERO"
+    }
+  ],
+  "images": []
 }

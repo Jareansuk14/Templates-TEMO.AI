@@ -1,0 +1,14 @@
+---
+import { SEO } from "@/data/content/seo";
+---
+
+<section class="seo-quote" aria-label="ข้อมูลเด่น">
+  <div class="container">
+    {SEO.map(({ id, heading, desc }) => (
+      <figure class="seo-quote-item" aria-labelledby={`${id}-title`}>
+        <h2 id={`${id}-title`}>{heading}</h2>
+        <blockquote id={`sub-${id}`}>{desc}</blockquote>
+      </figure>
+    ))}
+  </div>
+</section>

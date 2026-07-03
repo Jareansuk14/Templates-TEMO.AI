@@ -1,9 +1,0 @@
-{
-  "kind": "Seo",
-  "variant": "Rows2",
-  "componentName": "SeoRows2",
-  "displayName": "SEO • สลับซ้ายขวา (2 หัวข้อ)",
-  "astroFile": "SeoRows2.astro",
-  "cssFile": "SeoRows2.css",
-  "hasExternalLink": true
-}

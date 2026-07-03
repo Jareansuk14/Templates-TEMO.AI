@@ -7,6 +7,8 @@
 
 export const BRAND_NAME = "TEMO888";
 
+export const SITE_THEME = "คาสิโนออนไลน์";
+
 export const EXTERNAL_LINK = "https://www.youtube.com/";
 
 export const LINE = {

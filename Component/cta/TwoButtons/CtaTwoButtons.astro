@@ -1,0 +1,19 @@
+---
+import { ACTION_BUTTONS } from "@/lib/images";
+import { CTA } from "@/data/content/cta";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+const { login, register } = ACTION_BUTTONS;
+---
+
+<section class="cta2" aria-labelledby="cta-seo">
+  <div class="container">
+    <h2 id="cta-seo">{CTA.heading}</h2>
+    <p id="sub-cta-seo">{CTA.description}</p>
+    <div class="cta2-actions">
+      <a href={externalLink} aria-label={login.alt}><img src={login.src} alt={login.alt} width={login.width} height={login.height} loading="lazy" decoding="async" /></a>
+      <a href={externalLink} aria-label={register.alt}><img src={register.src} alt={register.alt} width={register.width} height={register.height} loading="lazy" decoding="async" /></a>
+    </div>
+  </div>
+</section>

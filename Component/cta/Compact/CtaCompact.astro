@@ -1,0 +1,16 @@
+---
+import { CTA } from "@/data/content/cta";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+---
+
+<section class="cta-compact" aria-labelledby="cta-seo">
+  <div class="container cta-compact-inner">
+    <div class="cta-compact-text">
+      <h2 id="cta-seo">{CTA.heading}</h2>
+      <p id="sub-cta-seo">{CTA.description}</p>
+    </div>
+    <a class="cta-compact-btn" href={externalLink}>สมัครเลย</a>
+  </div>
+</section>

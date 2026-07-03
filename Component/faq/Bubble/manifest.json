@@ -1,0 +1,34 @@
+{
+  "kind": "Faq",
+  "variant": "Bubble",
+  "componentName": "FaqBubble",
+  "displayName": "FAQ • บับเบิลแชท",
+  "astroFile": "FaqBubble.astro",
+  "slot": "faq",
+  "required": true,
+  "weight": 900,
+  "hasExternalLink": false,
+  "dataFile": "data/content/faq.ts",
+  "dataConst": "FAQ",
+  "repeatable": true,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [
+    {
+      "id": "faq-q-{n}",
+      "key": "q",
+      "label": "คำถาม {n}",
+      "type": "text",
+      "group": "FAQ"
+    },
+    {
+      "id": "faq-a-{n}",
+      "key": "a",
+      "label": "คำตอบ {n}",
+      "type": "body",
+      "group": "FAQ"
+    }
+  ],
+  "images": []
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "Game",
+  "variant": "MascotCards",
+  "componentName": "GameMascotCards",
+  "displayName": "เกม • มาสคอตโปร่งใส",
+  "astroFile": "GameMascotCards.astro",
+  "cssFile": "GameMascotCards.css",
+  "slot": "body",
+  "required": false,
+  "weight": 20,
+  "hasExternalLink": true,
+  "repeatable": false,
+  "imageRatio": "2:3",
+  "imageType": "transparent",
+  "imageGroup": "game",
+  "fields": [],
+  "images": [
+    {
+      "id": "game",
+      "role": "transparent game character mascot",
+      "ratio": "2:3",
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+---
+import { SEO_ARTICLE_IMAGES, SEO_MASCOT } from "@/lib/images";
+import { SEO } from "@/data/content/seo";
+
+interface Props { externalLink: string; }
+const { externalLink } = Astro.props;
+
+const first = SEO[0];
+const second = SEO[1];
+const third = SEO[2];
+const topImage = SEO_ARTICLE_IMAGES["seo-1"];
+---
+
+<div class="seo-psb3">
+  {(first || topImage) && (
+    <div class="seo-psb3-top">
+      {first && (
+        <article class="seo-psb3-copy" aria-labelledby={`${first.id}-title`}>
+          <h2 id={`${first.id}-title`}>{first.heading}</h2>
+          <p id={`sub-${first.id}`}>{first.desc}</p>
+        </article>
+      )}
+      {topImage && (
+        <a href={externalLink} class="seo-psb3-img" aria-label={topImage.alt} id="seo-1">
+          <span class="seo-psb3-img-inner">
+            <img src={topImage.src} alt={topImage.alt} width={topImage.width} height={topImage.height} loading="lazy" decoding="async" />
+          </span>
+        </a>
+      )}
+    </div>
+  )}
+
+  <div class="seo-psb3-body">
+    <div class="seo-psb3-mascot">
+      <img src={SEO_MASCOT.src} alt={SEO_MASCOT.alt} width={SEO_MASCOT.width} height={SEO_MASCOT.height} loading="lazy" decoding="async" />
+    </div>
+
+    <div class="seo-psb3-side">
+      {second && (
+        <article class="seo-psb3-box" aria-labelledby={`${second.id}-title`}>
+          <h2 id={`${second.id}-title`}>{second.heading}</h2>
+          <p id={`sub-${second.id}`}>{second.desc}</p>
+        </article>
+      )}
+      {third && (
+        <article class="seo-psb3-box" aria-labelledby={`${third.id}-title`}>
+          <h2 id={`${third.id}-title`}>{third.heading}</h2>
+          <p id={`sub-${third.id}`}>{third.desc}</p>
+        </article>
+      )}
+    </div>
+  </div>
+</div>

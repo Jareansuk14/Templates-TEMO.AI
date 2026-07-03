@@ -1,0 +1,7 @@
+[
+  { "slot": "header", "path": "components/Header.astro" },
+  { "slot": "banner", "path": "components/Banner.astro" },
+  { "slot": "faq", "path": "components/FAQSection.astro" },
+  { "slot": "page:promotions", "path": "components/page/PromotionsBody.astro" },
+  { "slot": "page:contact", "path": "components/page/ContactBody.astro" }
+]

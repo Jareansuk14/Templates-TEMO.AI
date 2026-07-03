@@ -1,0 +1,35 @@
+{
+  "kind": "Cta",
+  "variant": "Compact",
+  "componentName": "CtaCompact",
+  "displayName": "CTA • กระชับปุ่มข้อความ",
+  "astroFile": "CtaCompact.astro",
+  "cssFile": "CtaCompact.css",
+  "slot": "body",
+  "required": false,
+  "weight": 50,
+  "hasExternalLink": true,
+  "dataFile": "data/content/cta.ts",
+  "dataConst": "CTA",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [
+    {
+      "id": "cta-seo",
+      "key": "heading",
+      "label": "หัวข้อ CTA",
+      "type": "heading",
+      "group": "CTA"
+    },
+    {
+      "id": "sub-cta-seo",
+      "key": "description",
+      "label": "คำอธิบาย CTA",
+      "type": "body",
+      "group": "CTA"
+    }
+  ],
+  "images": []
+}

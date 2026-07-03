@@ -1,0 +1,37 @@
+{
+  "kind": "Seo",
+  "variant": "BoxRows3Full",
+  "componentName": "SeoBoxRows3Full",
+  "displayName": "SEO • กล่องเต็มจอ 3 (มีรูป)",
+  "astroFile": "SeoBoxRows3Full.astro",
+  "cssFile": "SeoBoxRows3Full.css",
+  "slot": "body",
+  "required": true,
+  "weight": 30,
+  "hasExternalLink": true,
+  "dataFile": "data/content/seo.ts",
+  "dataConst": "SEO",
+  "repeatable": true,
+  "imageRatio": "16:9",
+  "imageType": "normal",
+  "imageGroup": "seo",
+  "imageCount": 3,
+  "headingCount": 3,
+  "fields": [
+    {
+      "id": "seo-{n}",
+      "key": "heading",
+      "label": "SEO {n} — หัวข้อ",
+      "type": "heading",
+      "group": "SEO"
+    },
+    {
+      "id": "sub-seo-{n}",
+      "key": "desc",
+      "label": "SEO {n} — เนื้อหา",
+      "type": "body",
+      "group": "SEO"
+    }
+  ],
+  "images": []
+}

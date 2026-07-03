@@ -1,0 +1,35 @@
+{
+  "kind": "PromotionsPage",
+  "variant": "Featured",
+  "componentName": "PromotionsPageFeatured",
+  "displayName": "หน้าโปรโมชั่น • ใบใหญ่ + กริด 4 รูป",
+  "astroFile": "PromotionsPageFeatured.astro",
+  "slot": "page:promotions",
+  "required": true,
+  "weight": 700,
+  "hasExternalLink": true,
+  "dataFile": "data/content/promotionsPage.ts",
+  "dataConst": "PROMOTIONS_PAGE",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "promo",
+  "imageCount": 4,
+  "fields": [
+    {
+      "id": "promotion-seo",
+      "key": "heading",
+      "label": "หัวข้อหน้าโปรโมชั่น (H1)",
+      "type": "heading",
+      "group": "PROMOTIONS"
+    },
+    {
+      "id": "sub-promotion-seo",
+      "key": "description",
+      "label": "คำอธิบายหน้าโปรโมชั่น",
+      "type": "body",
+      "group": "PROMOTIONS"
+    }
+  ],
+  "images": []
+}

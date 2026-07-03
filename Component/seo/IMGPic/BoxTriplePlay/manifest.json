@@ -1,0 +1,43 @@
+{
+  "kind": "Seo",
+  "variant": "BoxTriplePlay",
+  "componentName": "SeoBoxTriplePlay",
+  "displayName": "SEO • กล่อง 2 หัวข้อ + รูป/ปุ่ม + หัวข้อ/รูปล่าง",
+  "astroFile": "SeoBoxTriplePlay.astro",
+  "cssFile": "SeoBoxTriplePlay.css",
+  "slot": "body",
+  "required": true,
+  "weight": 30,
+  "hasExternalLink": true,
+  "dataFile": "data/content/seo.ts",
+  "dataConst": "SEO",
+  "repeatable": true,
+  "imageRatio": "16:9",
+  "imageType": "normal",
+  "imageGroup": "seo",
+  "imageCount": 2,
+  "headingCount": 3,
+  "fields": [
+    {
+      "id": "seo-{n}",
+      "key": "heading",
+      "label": "SEO {n} — หัวข้อ",
+      "type": "heading",
+      "group": "SEO"
+    },
+    {
+      "id": "sub-seo-{n}",
+      "key": "desc",
+      "label": "SEO {n} — เนื้อหา",
+      "type": "body",
+      "group": "SEO"
+    }
+  ],
+  "images": [
+    {
+      "id": "play",
+      "role": "play button",
+      "required": true
+    }
+  ]
+}

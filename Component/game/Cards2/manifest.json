@@ -1,9 +1,0 @@
-{
-  "kind": "Game",
-  "variant": "Cards2",
-  "componentName": "GameCards2",
-  "displayName": "เกม • 2 รูป",
-  "astroFile": "GameCards2.astro",
-  "cssFile": "GameCards2.css",
-  "hasExternalLink": true
-}

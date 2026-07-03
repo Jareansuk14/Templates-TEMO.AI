@@ -1,0 +1,35 @@
+{
+  "kind": "Hero",
+  "variant": "Compact",
+  "componentName": "HeroCompact",
+  "displayName": "Hero • กระชับ (ข้อความ+ปุ่มแถวเดียว)",
+  "astroFile": "HeroCompact.astro",
+  "cssFile": "HeroCompact.css",
+  "slot": "body",
+  "required": true,
+  "weight": 10,
+  "hasExternalLink": true,
+  "dataFile": "data/content/hero.ts",
+  "dataConst": "HERO",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "",
+  "fields": [
+    {
+      "id": "main-seo",
+      "key": "heading",
+      "label": "หัวข้อหลัก (H1)",
+      "type": "heading",
+      "group": "HERO"
+    },
+    {
+      "id": "sub-main-seo",
+      "key": "description",
+      "label": "คำอธิบาย Hero",
+      "type": "body",
+      "group": "HERO"
+    }
+  ],
+  "images": []
+}

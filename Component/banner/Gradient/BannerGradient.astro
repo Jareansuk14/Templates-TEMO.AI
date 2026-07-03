@@ -1,0 +1,19 @@
+---
+import { BANNER, hasBannerImage } from "@/lib/images";
+const hasBanner = hasBannerImage();
+---
+
+<section class="bn-grad" aria-label="แบนเนอร์หลัก">
+  <div class="bn-grad-wrap">
+    {hasBanner && (
+      <img src={BANNER.src} alt={BANNER.alt} width={BANNER.width} height={BANNER.height} loading="eager" fetchpriority="high" decoding="async" />
+    )}
+    <span class="bn-grad-fade" aria-hidden="true"></span>
+  </div>
+</section>
+
+<style>
+.bn-grad-wrap { position: relative; }
+.bn-grad-wrap img { width: 100%; height: auto; display: block; }
+.bn-grad-fade { position: absolute; left: 0; right: 0; bottom: 0; height: 30%; background: linear-gradient(transparent, var(--color-bg)); pointer-events: none; }
+</style>

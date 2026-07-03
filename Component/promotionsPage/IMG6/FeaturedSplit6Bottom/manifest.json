@@ -1,0 +1,35 @@
+{
+  "kind": "PromotionsPage",
+  "variant": "FeaturedSplit6Bottom",
+  "componentName": "PromotionsPageFeaturedSplit6Bottom",
+  "displayName": "หน้าโปรโมชั่น • กริด 3 + กริด 2 + ใบใหญ่ (6 รูป)",
+  "astroFile": "PromotionsPageFeaturedSplit6Bottom.astro",
+  "slot": "page:promotions",
+  "required": true,
+  "weight": 704,
+  "hasExternalLink": true,
+  "dataFile": "data/content/promotionsPage.ts",
+  "dataConst": "PROMOTIONS_PAGE",
+  "repeatable": false,
+  "imageRatio": "",
+  "imageType": "normal",
+  "imageGroup": "promo",
+  "imageCount": 6,
+  "fields": [
+    {
+      "id": "promotion-seo",
+      "key": "heading",
+      "label": "หัวข้อหน้าโปรโมชั่น (H1)",
+      "type": "heading",
+      "group": "PROMOTIONS"
+    },
+    {
+      "id": "sub-promotion-seo",
+      "key": "description",
+      "label": "คำอธิบายหน้าโปรโมชั่น",
+      "type": "body",
+      "group": "PROMOTIONS"
+    }
+  ],
+  "images": []
+}

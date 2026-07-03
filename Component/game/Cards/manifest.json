@@ -1,0 +1,25 @@
+{
+  "kind": "Game",
+  "variant": "Cards",
+  "componentName": "GameCards",
+  "displayName": "เกม • การ์ดปกติ",
+  "astroFile": "GameCards.astro",
+  "cssFile": "GameCards.css",
+  "slot": "body",
+  "required": false,
+  "weight": 20,
+  "hasExternalLink": true,
+  "repeatable": false,
+  "imageRatio": "2:3",
+  "imageType": "normal",
+  "imageGroup": "game",
+  "fields": [],
+  "images": [
+    {
+      "id": "game",
+      "role": "game character card",
+      "ratio": "2:3",
+      "required": true
+    }
+  ]
+}
