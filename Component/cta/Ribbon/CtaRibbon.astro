@@ -4,7 +4,7 @@ import { CTA } from "@/data/content/cta";
 
 interface Props { externalLink: string; }
 const { externalLink } = Astro.props;
-const { register } = ACTION_BUTTONS;
+const { contact } = ACTION_BUTTONS;
 ---
 
 <section class="cta-ribbon" aria-labelledby="cta-seo">
@@ -14,8 +14,8 @@ const { register } = ACTION_BUTTONS;
       <h2 id="cta-seo">{CTA.heading}</h2>
       <p id="sub-cta-seo">{CTA.description}</p>
     </div>
-    <a class="cta-ribbon-btn" href={externalLink} aria-label={register.alt}>
-      <img src={register.src} alt={register.alt} width={register.width} height={register.height} loading="lazy" decoding="async" />
+    <a class="cta-ribbon-btn" href={externalLink} aria-label={contact.alt}>
+      <img src={contact.src} alt={contact.alt} width={contact.width} height={contact.height} loading="lazy" decoding="async" />
     </a>
   </div>
 </section>

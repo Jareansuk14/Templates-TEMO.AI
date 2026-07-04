@@ -1,22 +1,22 @@
 {
   "kind": "Seo",
-  "variant": "RowsFit3",
-  "componentName": "SeoRowsFit3",
-  "displayName": "SEO • สลับซ้ายขวา 3 กล่องเต็มสูง (มีรูป)",
-  "astroFile": "SeoRowsFit3.astro",
-  "cssFile": "SeoRowsFit3.css",
+  "variant": "Quote2",
+  "componentName": "SeoQuote2",
+  "displayName": "SEO • สไตล์ยกคำพูด 2 หัวข้อ",
+  "astroFile": "SeoQuote2.astro",
+  "cssFile": "SeoQuote2.css",
   "slot": "body",
   "required": true,
   "weight": 30,
-  "hasExternalLink": true,
+  "hasExternalLink": false,
   "dataFile": "data/content/seo.ts",
   "dataConst": "SEO",
   "repeatable": true,
-  "imageRatio": "16:9",
+  "imageRatio": "",
   "imageType": "normal",
-  "imageGroup": "seo",
-  "imageCount": 3,
-  "headingCount": 3,
+  "imageGroup": "",
+  "imageCount": 0,
+  "headingCount": 2,
   "fields": [
     {
       "id": "seo-{n}",
@@ -33,11 +33,5 @@
       "group": "SEO"
     }
   ],
-  "images": [
-    {
-      "id": "play",
-      "role": "play button",
-      "required": true
-    }
-  ]
+  "images": []
 }

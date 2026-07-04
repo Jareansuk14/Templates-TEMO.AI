@@ -728,7 +728,7 @@ h2 .section-brand {
   :root {
     --container-pad: 0.625rem;
     --bottom-nav-height: 60px;
-    --action-btn-h: 60px;
+    --action-btn-h: 50px;
   }
 
   .mobile-bottom-nav-label { font-size: var(--fz-xs); }

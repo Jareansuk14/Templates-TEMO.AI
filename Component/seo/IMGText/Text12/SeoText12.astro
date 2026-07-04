@@ -1,0 +1,14 @@
+---
+import { SEO } from "@/data/content/seo";
+---
+
+<div class="seo-zebra-wrap" aria-label="ข้อมูลเด่น">
+  {SEO.map(({ id, heading, desc }) => (
+    <section id={id} class="seo-zebra-item" aria-labelledby={`${id}-title`}>
+      <div class="container seo-zebra-inner">
+        <h2 id={`${id}-title`}>{heading}</h2>
+        <p id={`sub-${id}`}>{desc}</p>
+      </div>
+    </section>
+  ))}
+</div>

@@ -1,0 +1,6 @@
+﻿.seo-zebra-item { padding: var(--section-pad-y) var(--container-pad); }
+.seo-zebra-item:nth-child(even) { background: var(--color-bg-2); }
+.seo-zebra-inner { max-width: 800px; margin-inline: auto; text-align: center; }
+.seo-zebra-item h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); margin-bottom: 0.85rem; }
+.seo-zebra-item p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }
+@media (max-width: 768px) { .seo-zebra-item { padding: var(--section-pad-y) var(--container-pad); } }

@@ -1,0 +1,6 @@
+﻿.seo-num { padding: var(--section-pad-y) var(--container-pad); }
+.seo-num > .container { max-width: 860px; margin-inline: auto; display: flex; flex-direction: column; gap: 1.5rem; }
+.seo-num-row { display: flex; gap: 1.25rem; align-items: flex-start; }
+.seo-num-badge { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; color: var(--btn-primary-text); background: var(--color-primary); }
+.seo-num-body h2 { color: var(--color-text); font-size: var(--fz-heading); line-height: var(--lh-heading); margin-bottom: 0.5rem; }
+.seo-num-body p { color: var(--color-text-muted); font-size: var(--fz-body); line-height: var(--lh-body); margin: 0; }
